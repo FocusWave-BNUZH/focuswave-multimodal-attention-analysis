@@ -1,0 +1,11 @@
+fact,evidence_source,evidence_status,allowed_in_coarse_roi,decision
+range_axis,formal ReportDataCube1D 256 range elements and range_m=bin*0.037,CONFIRMED_AXIS_SEMANTICS,yes as coordinate only,does not identify physical chest or room location
+range_bias,formal-session calibration target or device readback absent,UNRESOLVED,no,no offset or tolerance frozen
+radar_mount,session-bound position height and yaw/pitch/roll absent,MISSING_REQUIRED_GEOMETRY,no,no scene mapping
+participant_envelope,0.4m upper-sternum protocol instruction only,PROTOCOL_INSTRUCTION_ONLY,no,no bound frozen
+posture_tolerance,no session-linked slouch or reposition record,MISSING_REQUIRED_GEOMETRY,no,no boundary tolerance frozen
+room_geometry,no room wall adjacent-space or scale-bearing setup record,MISSING_REQUIRED_GEOMETRY,no,no behind-wall or another-room exclusion
+fov_and_angle,no formal FOV boresight antenna coordinate or angle-calibration record,MISSING_REQUIRED_GEOMETRY,no,1-D range cannot locate a target in space
+engineering_range_verifier,approximately 0.8m expected-target check,ENGINEERING_REFERENCE_ONLY,no,not session-level placement truth
+near_side_structure,B2 observed persistent bright structure with unresolved identity,OBSERVED_SUPPORTING,no,no cause or hard exclusion inferred
+historical_gate,0.30-1.50m bins 9-40,HISTORICAL_GATE_SENSITIVITY,no,not restored and not physiology-valid

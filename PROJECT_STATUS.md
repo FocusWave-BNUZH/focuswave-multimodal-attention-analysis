@@ -1,5 +1,11 @@
 # FocusWave Multimodal Attention Analysis 状态
 
+## 2026-08-30 mmWave T2 coarse physical ROI contract — PASS / COARSE_ROI_UNRESOLVED / HARD_EXTERNAL_BLOCKER
+
+- 在 canonical `main` `9eb624ebfa58c0ef58a19de04266fe8d0da7aec3` 上复用 #26 physical-truth recovery、formal 0.037 m/bin axis、B2 structure audit、协议 0.4 m instruction 与工程 0.8 m verifier；未重跑 estimator、C2B/C2C 或按 HR/BR/RSP 误差选阈值。
+- 0.037 m/bin 仅闭合 range coordinate，不是胸部实测距离；256-bin nominal extent 也不是 room/FOV map。正式场次仍缺 installation height/orientation、chair/chest envelope、posture tolerance、room/wall/adjacent-space geometry、FOV/angle calibration、range-bias receipt 及其 acquisition-time linkage。
+- 因而没有 current numeric coarse ROI、scene-hard-exclude interval 或 soft prior；旧 `0.30–1.50 m` 继续仅为 `HISTORICAL_GATE_SENSITIVITY`，不包装为 physiology-valid gate。证据包为 `docs/results/2026-08-30_MMWAVE_PHYSICAL_ROI_CONTRACT/`；HR/BR=`HOLD`，HRV=`BLOCKED`。
+
 ## 2026-08-30 mmWave HR/BR temporal contract candidate — PARTIAL / formal window not frozen
 
 - 已将 `20 s engineering diagnostic`、`25 s internal HR course`、`40 s VMD / 20 s step`、`60 s historical trailing aggregation` 与 `pre_30s` multimodal probe alignment 分离记录；它们不可互换。候选合同：`docs/research/MMWAVE_HR_BR_TEMPORAL_CONTRACT_CANDIDATE_2026-08-30.md`。

@@ -6,6 +6,12 @@
 
 更新时间：2026-08-30（Asia/Shanghai）
 
+### 2026-08-30: T2 coarse physical ROI contract — PASS / COARSE_ROI_UNRESOLVED / HARD_EXTERNAL_BLOCKER
+
+**Reuse and scope**: Reused Issue #26's independent physical-truth recovery, B2 structural evidence, protocol/range-verification boundary, and the confirmed formal 0.037 m/bin DataCube axis. `REUSE_REJECTION_REASON=existing repository evidence cannot map an individual formal-session radar range coordinate to chest, chair, room, wall, or adjacent-space geometry; an outcome-tuned threshold or selector rerun cannot recover the missing external fact.` No raw data, target, selector, estimator, QC, C2B/C2C, HR/BR, or HRV computation changed.
+
+**Decision**: `range_m=selected_bin*0.037` is a radar coordinate/proxy, not measured body placement. The nominal 256-bin extent is data-domain only. There is no session-bound mount/orientation, participant envelope, posture tolerance, room geometry, FOV/angle calibration, or range-bias receipt, so no numerical coarse physical ROI, hard scene exclusion, or soft prior is frozen. Historical `0.30–1.50 m` remains `HISTORICAL_GATE_SENSITIVITY`, never a physiology-valid gate. Reopen only with session-linked geometry, calibrated range-bias evidence, and acquisition-time linkage. Evidence: `docs/results/2026-08-30_MMWAVE_PHYSICAL_ROI_CONTRACT/`.
+
 ---
 
 ### 2026-08-30：near-side structure / pre-selection clutter A/B — PARTIAL / KEEP CURRENT SELECTOR

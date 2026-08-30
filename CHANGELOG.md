@@ -1,5 +1,11 @@
 # 修改说明
 
+## 2026-08-30 — audit(mmwave): freeze the coarse physical ROI evidence boundary
+
+- Added a Git-safe geometry/ROI evidence table, manifest and exact no-numeric-ROI rule under `docs/results/2026-08-30_MMWAVE_PHYSICAL_ROI_CONTRACT/`; this reuses the completed #26 physical-truth recovery rather than rerunning an estimator or selecting a threshold from HR/BR/RSP error.
+- Confirmed the distinction between the 0.037 m/bin range coordinate and a measured chest location. The nominal 256-bin data-domain extent is not a room or FOV map. No formal-session mount/orientation, chair/chest envelope, posture tolerance, room/wall geometry, FOV/angle calibration, or range-bias receipt was recovered.
+- `COARSE_ROI_UNRESOLVED / HARD_EXTERNAL_BLOCKER`: no in-axis scene-hard-exclude interval or soft prior is frozen; historical 0.30–1.50 m remains `HISTORICAL_GATE_SENSITIVITY`, not a physiology-valid gate. HR/BR remain `HOLD`; HRV remains `BLOCKED`.
+
 ## 2026-08-30 — audit(mmwave): execute frozen near-field / pre-selection clutter A/B
 
 - Added the minimal `run_mmwave_preselection_clutter_ab_20260830.py` adapter, reusing the current v3.1.1 selector and block-local continuity on the existing 335-window formal-block diagnostic subset. A uses the raw mean-power profile; B applies slow-time complex-mean subtraction only after Range FFT, before that same selector.

@@ -1,0 +1,23 @@
+{
+  "run_id": "MMWAVE_COARSE_PHYSICAL_ROI_CONTRACT_20260830",
+  "status": "PASS / COARSE_ROI_UNRESOLVED / HARD_EXTERNAL_BLOCKER",
+  "source_commit": "9eb624ebfa58c0ef58a19de04266fe8d0da7aec3",
+  "rule": "no numeric physical ROI or scene-hard-exclude interval is frozen for formal sessions",
+  "historical_0_30_1_50_m": "HISTORICAL_GATE_SENSITIVITY_ONLY",
+  "outcome_tuning": "PROHIBITED",
+  "changed_estimator_or_selector": false,
+  "changed_physiology_status": false,
+  "git_safe_outputs": [
+    "MMWAVE_COARSE_PHYSICAL_ROI_CONTRACT_2026-08-30.md",
+    "MMWAVE_COARSE_PHYSICAL_ROI_EVIDENCE_2026-08-30.csv",
+    "MMWAVE_COARSE_PHYSICAL_ROI_MANIFEST_2026-08-30.json"
+  ],
+  "local_only_outputs": [],
+  "required_reopening_facts": [
+    "session-bound radar installation position height and orientation",
+    "session-bound chair/chest envelope and posture tolerance",
+    "room wall adjacent-space geometry with scale-bearing evidence",
+    "acquisition-time linkage",
+    "range-bias calibration evidence"
+  ]
+}
