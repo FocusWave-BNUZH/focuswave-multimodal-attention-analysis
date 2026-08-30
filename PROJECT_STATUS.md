@@ -2,6 +2,12 @@
 
 ## 2026-08-30 near-field / distance-gate mainline — PARTIAL
 
+## 2026-08-30 mmWave T7 probe adapter — PARTIAL / FINAL CONTRIBUTION BLOCKED
+
+- 已实现由 canonical 1,440-probe timeline 驱动的 local-only adapter；它强制五列 key、`pre_30s`、non-null/unique keys、schema 与 key-set merge，并明确写入 missingness、failure reason、source/estimator/adapter provenance 和 contribution eligibility。
+- 本机实际 run：1,440 timeline rows、0 exact-keyed formal mmWave source rows、0 matched、1,440 `STRUCTURAL_MISSING` / `NO_CANONICAL_MMWAVE_PROBE_SOURCE`。没有用历史 335-window 或旧 subject 编号替代当前 probe source。
+- 所有行均为 `EXCLUDE_FROM_FINAL_MULTIMODAL_CONTRIBUTION`，HR/BR/HRV 与 diagnostic 字段保持 null。T5 HR/BR 未 PASS、T6 HRV `EXCLUDE`，所以 T7 仅 structural implementation PASS、总状态 PARTIAL；不能开始最终贡献分析。证据：`docs/results/2026-08-30_MMWAVE_PROBE_ADAPTER_T7/`。
+
 - 已执行：复用 71-session B2 near/far/reference front-end audit 与冻结的 335-window formal-block diagnostic subset，完成 selector 前 ECG-independent A/B。A 为 raw mean-power profile；B 只在 Range-FFT 后做 slow-time complex-mean subtraction，随后调用同一 v3.1.1 candidate/channel/continuity logic。
 - 335/335 窗 A/B 均有候选。HR `<0.30m`=`36.1194%→24.1791%`，但 HR bin/channel switch=`50.1529%/48.3180%→58.4098%/55.6575%`；BR `<0.30m`=`7.1642%→7.4627%`，BR channel switch=`59.9388%→67.8899%`。无 coverage 损失，但稳定性没有保持，故 `KEEP_CURRENT_SELECTOR`、`DO_NOT_ADD_PRESELECTION_PREPROCESSING`。
 - near-side bright structure=`OBSERVED`；被慢时间相减削弱的成分=`LIKELY_STATIC_COMPONENT`，其物理来源仍 `AMBIGUOUS`，不得称人体或泄漏。B2 没有支持 near-field/direct leakage 或 fixed reflection 的 session-level group verdict。

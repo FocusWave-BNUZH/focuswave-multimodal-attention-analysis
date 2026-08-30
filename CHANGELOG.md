@@ -1,5 +1,11 @@
 # 修改说明
 
+## 2026-08-30 — feat(mmwave): implement guarded T7 canonical probe adapter
+
+- Added `scripts/maintenance/build_mmwave_probe_adapter_v1.py`, schema/field-contract provenance fields, and regression tests. The adapter takes the already-frozen 1,440-probe timeline and only accepts an exact five-column-keyed availability index; it rejects guessed identities, duplicate/non-null key violations and orphan source rows.
+- The actual local run generated 1,440 explicit `STRUCTURAL_MISSING` rows because no exact-keyed formal mmWave source index exists. JSON schema, unique-key and canonical key-set merge validation pass; no physiology or diagnostic values are zero-filled or copied into a formal predictor.
+- T5 HR/BR is not PASS and T6 HRV remains EXCLUDE. Every row is labelled `EXCLUDE_FROM_FINAL_MULTIMODAL_CONTRIBUTION`, so final contribution analysis remains blocked. Git-safe aggregate evidence is under `docs/results/2026-08-30_MMWAVE_PROBE_ADAPTER_T7/`; row-level CSV/manifest/audit remain local-only beneath the parameterized derived package.
+
 ## 2026-08-30 — audit(mmwave): execute frozen near-field / pre-selection clutter A/B
 
 - Added the minimal `run_mmwave_preselection_clutter_ab_20260830.py` adapter, reusing the current v3.1.1 selector and block-local continuity on the existing 335-window formal-block diagnostic subset. A uses the raw mean-power profile; B applies slow-time complex-mean subtraction only after Range FFT, before that same selector.

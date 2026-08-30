@@ -8,6 +8,16 @@
 
 ---
 
+### 2026-08-30：T7 mmWave probe adapter — PARTIAL / FINAL CONTRIBUTION BLOCKED
+
+**Reuse Gate**：复用已冻结的母表、1,440-probe canonical timeline、五列 key、`pre_30s` 时间语义和 `MMWAVE_FEATURE_CONTRACT_V1.csv`；没有新建 parallel master table、重跑 producer、估计 HR/BR/HRV 或从 folder/旧 subject 编号猜测身份。历史 mmWave 窗口与当前 timeline 不具备 exact five-column key，故 `REUSE_REJECTION_REASON=NO_EXACT_FIVE_COLUMN_KEYED_FORMAL_MMWAVE_OUTPUT`，不允许强行映射。
+
+**实现与核验**：新增 parameterized adapter，仅接受已 keyed 的 availability index；实际本机 run 输出完整 1,440 行，schema、non-null/unique key 与 canonical-key-set merge 均通过。当前没有可接入的 exact-keyed source index，故 `STRUCTURAL_MISSING=1,440`、`NO_CANONICAL_MMWAVE_PROBE_SOURCE=1,440`、matched source rows=`0`。每行保留 source/run/estimator/adapter provenance 字段、failure reason 和 `EXCLUDE_FROM_FINAL_MULTIMODAL_CONTRIBUTION`，没有零填充。
+
+**边界与决策**：T5 HR/BR formal gate 尚未 PASS，T6 HRV 仍 `EXCLUDE`；所有 held physiology 和 diagnostic 字段均保持 null，T7 只能报告 structural adapter `PARTIAL`，不得进入最终多模态 contribution analysis。后续需要一个真实、exact-keyed producer availability index；即使该输入到位，T5/T6 也仍是独立科学 gate。证据包：`docs/results/2026-08-30_MMWAVE_PROBE_ADAPTER_T7/`。
+
+---
+
 ### 2026-08-30：near-side structure / pre-selection clutter A/B — PARTIAL / KEEP CURRENT SELECTOR
 
 **Reuse Gate**：复用 B2 的 71-session corrected-distance / range-map / channel-grid audit、冻结的 335 个 DLL-time formal-block diagnostic windows（`97793/9779/97795`）及 v3.1.1 原样 candidate scoring/channel selection/block-local continuity。既有资产只有 display-only temporal-mean subtraction，没有 selector-integrated 同窗 A/B aggregate；因此记录 `REUSE_REJECTION_REASON` 后只增加 maintenance adapter，没有改 producer、raw、Range FFT、HR/BR estimator、ECG、QC 或 distance gate。

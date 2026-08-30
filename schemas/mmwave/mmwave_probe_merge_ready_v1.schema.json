@@ -15,7 +15,11 @@
     "window_end_unix_ms",
     "mmwave_state",
     "mmwave_observed",
-    "mmwave_missing_reason"
+    "mmwave_missing_reason",
+    "mmwave_failure_reason",
+    "mmwave_eligibility_label",
+    "mmwave_estimator_version",
+    "mmwave_adapter_source_commit"
   ],
   "properties": {
     "repeat_participant_id": {"type": "string", "minLength": 1},
@@ -31,8 +35,17 @@
     },
     "mmwave_observed": {"type": "boolean"},
     "mmwave_missing_reason": {"type": ["string", "null"]},
+    "mmwave_failure_reason": {"type": ["string", "null"]},
+    "mmwave_eligibility_label": {
+      "enum": [
+        "EXCLUDE_FROM_FINAL_MULTIMODAL_CONTRIBUTION",
+        "STRUCTURAL_AUDIT_ONLY"
+      ]
+    },
     "mmwave_source_run_id": {"type": ["string", "null"]},
     "mmwave_source_commit": {"type": ["string", "null"]},
+    "mmwave_estimator_version": {"type": ["string", "null"]},
+    "mmwave_adapter_source_commit": {"type": ["string", "null"]},
     "mmwave_loadable": {"type": ["boolean", "null"]},
     "mmwave_timestamp_coverage_fraction": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
     "mmwave_hr_freq_bpm_median": {"type": ["number", "null"]},

@@ -1,6 +1,6 @@
 # mmWave canonical state, branch consolidation, and multimodal interface — V1
 
-Status: `CANONICAL / MAIN-BOUND / INTERFACE_CONTRACT_FROZEN / ADAPTER_IMPLEMENTATION_PENDING`
+Status: `CANONICAL / MAIN-BOUND / INTERFACE_CONTRACT_FROZEN / ADAPTER_IMPLEMENTED_PARTIAL`
 
 Effective date: 2026-08-30. This document is the first mmWave-specific state authority for any AI or human entering the canonical repository. It consolidates branch history, current scientific decisions, time semantics, and the reserved multimodal interface. It does not rerun science and does not promote HR/BR/HRV beyond their existing evidence boundaries.
 
@@ -103,11 +103,30 @@ The JSON/CSV schema authority is `schemas/mmwave/mmwave_probe_merge_ready_v1.sch
 
 ## 5. Integration gate and next implementation task
 
-`MMWAVE_INTERFACE_CONTRACT=FROZEN`, but `MMWAVE_PROBE_ADAPTER=IMPLEMENTATION_PENDING`.
+`MMWAVE_INTERFACE_CONTRACT=FROZEN`; `MMWAVE_PROBE_ADAPTER=IMPLEMENTED_PARTIAL`.
 
 The next integration implementation is deliberately narrow: adapt existing canonical mmWave outputs to the frozen probe key/window, produce `mmwave_probe_merge_ready.csv` plus manifest, and validate non-null/unique keys and merge behavior against the 1,440-row canonical probe timeline. It must not rerun or redesign the producer, change HR/BR estimators, select a better window by MAE, change distance/quality gates, or promote currently held/blocked physiology.
 
 Until that adapter passes schema/merge tests, final multimodal code must continue treating mmWave as a reserved interface rather than a primary predictor block. When it passes, the multimodal 8-subset contribution design may consume only fields whose `multimodal_use` is permitted by `MMWAVE_FEATURE_CONTRACT_V1.csv` at that time.
+
+### T7 implementation result — 2026-08-30
+
+`scripts/maintenance/build_mmwave_probe_adapter_v1.py` now creates the local-only
+exchange CSV, manifest and aggregate audit from the frozen timeline. It accepts
+only an optional upstream availability index already keyed by the canonical five
+columns; it rejects duplicate, null or non-timeline keys and never infers an
+identity from folders. It adds explicit failure reason, eligibility label,
+estimator version and adapter source commit provenance to the exchange schema.
+
+The actual local run has a 1,440-row timeline, zero exact-keyed formal mmWave
+source rows and therefore 1,440 `STRUCTURAL_MISSING` rows. Schema validation,
+non-null/unique key validation and canonical key-set merge validation all pass;
+this is a structural implementation result, not a source-coverage pass. Every
+row is labelled `EXCLUDE_FROM_FINAL_MULTIMODAL_CONTRIBUTION`; physiology and
+diagnostic fields remain null. The adapter is `PARTIAL`, and final contribution
+analysis remains blocked pending a genuine source index plus separate T5/T6
+scientific gates. Git-safe aggregate evidence is in
+`docs/results/2026-08-30_MMWAVE_PROBE_ADAPTER_T7/`.
 
 ## 6. AI handoff rule
 

@@ -10,8 +10,12 @@ window_end_unix_ms,probe,integer,ms,yes,probe onset exclusive endpoint,time,CANO
 mmwave_state,probe,string,enum,yes,modality row state,structural,STRUCTURAL_ALLOW,explicit state required,AUDIT_SENSITIVITY
 mmwave_observed,probe,boolean,bool,yes,whether usable source observations overlap window,structural,STRUCTURAL_ALLOW,false is not zero physiology,AUDIT_SENSITIVITY
 mmwave_missing_reason,probe,string,reason,yes,explicit structural/observation/QC reason,structural,STRUCTURAL_ALLOW,empty only when semantically not applicable,AUDIT_SENSITIVITY
+mmwave_failure_reason,probe,string,reason,yes,upstream/adapter failure reason distinct from missingness,structural,STRUCTURAL_ALLOW,null only when no failure is known,AUDIT_SENSITIVITY
+mmwave_eligibility_label,probe,string,enum,yes,current formal contribution eligibility,governance,FORMAL_EXCLUDE,never infer eligibility from QC or coverage,EXCLUDE
 mmwave_source_run_id,probe,string,id,no,producer/adapter run identifier,provenance,STRUCTURAL_ALLOW,null when unavailable,AUDIT
-mmwave_source_commit,probe,string,git_sha,no,producer/adapter source commit,provenance,STRUCTURAL_ALLOW,null when unavailable,AUDIT
+mmwave_source_commit,probe,string,git_sha,no,producer source commit for source row,provenance,STRUCTURAL_ALLOW,null when unavailable,AUDIT
+mmwave_estimator_version,probe,string,version,yes,estimator version for source row; null when no canonical source row is attached,provenance,STRUCTURAL_ALLOW,never invent from a nearby or historical output,AUDIT
+mmwave_adapter_source_commit,probe,string,git_sha,yes,canonical adapter source commit used to generate row,provenance,STRUCTURAL_ALLOW,explicit null only when unavailable,AUDIT
 mmwave_loadable,probe,boolean,bool,no,whether the source required for the window can be loaded,structural,STRUCTURAL_ALLOW,null when not assessable,AUDIT_SENSITIVITY
 mmwave_timestamp_coverage_fraction,probe,number,fraction,no,fraction of expected window covered by authoritative modality timestamps,structural,STRUCTURAL_ALLOW,null when timestamps unavailable,AUDIT_SENSITIVITY
 mmwave_hr_freq_bpm_median,probe,number,bpm,no,existing frequency-domain HR candidate aggregated within frozen window,physiology,SUPPORTING_HOLD,null when unavailable/withheld,NOT_PRIMARY
