@@ -1,5 +1,10 @@
 # FocusWave Multimodal Attention Analysis 状态
 
+## 2026-08-30 mmWave HR/BR temporal contract candidate — PARTIAL / formal window not frozen
+
+- 已将 `20 s engineering diagnostic`、`25 s internal HR course`、`40 s VMD / 20 s step`、`60 s historical trailing aggregation` 与 `pre_30s` multimodal probe alignment 分离记录；它们不可互换。候选合同：`docs/research/MMWAVE_HR_BR_TEMPORAL_CONTRACT_CANDIDATE_2026-08-30.md`。
+- #25 的 303 endpoint / 283 paired-ECG-valid 对比仍仅为条件性诊断：20 s/60 s MAE=`14.703129/5.608574 bpm`，不按结果选择 60 s。正式 HR/BR temporal contract 等待 T2 `PHYSICAL_GATE_UNRESOLVED` 和 T3 `WAIT_ON_SELECTOR_VALIDITY` 关闭；HR/BR=`HOLD`，HRV=`BLOCKED`，mmWave 继续不进入 `pre_30s` 的正式三模态 producer。
+
 ## 2026-08-30 near-field / distance-gate mainline — PARTIAL
 
 - 已执行：复用 71-session B2 near/far/reference front-end audit 与冻结的 335-window formal-block diagnostic subset，完成 selector 前 ECG-independent A/B。A 为 raw mean-power profile；B 只在 Range-FFT 后做 slow-time complex-mean subtraction，随后调用同一 v3.1.1 candidate/channel/continuity logic。
