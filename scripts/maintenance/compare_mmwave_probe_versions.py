@@ -69,10 +69,14 @@ def main():
                               median_absolute_difference=float(np.median(deltas)) if deltas else None,
                               p90_absolute_difference=float(np.percentile(deltas,90)) if deltas else None,
                               max_absolute_difference=float(max(deltas)) if deltas else None)
-    boundary = {k for k,v in audits.items() if v['old_endpoint_hit']}
+    legacy_python_boundary = {k for k, v in audits.items() if v['legacy_python_endpoint_hit']}
+    formal_dll_boundary = {k for k, v in audits.items() if v['formal_dll_endpoint_hit']}
     result = dict(rows=len(old), sessions=len({r['session_id'] for r in old.values()}), one_to_one=True,
-                  any_mmwave_field_changed=len(changed_keys), old_endpoint_hits=len(boundary),
-                  endpoint_hit_rows_changed=len(boundary & changed_keys),
+                  any_mmwave_field_changed=len(changed_keys),
+                  legacy_python_endpoint_hits=len(legacy_python_boundary),
+                  formal_dll_endpoint_hits=len(formal_dll_boundary),
+                  legacy_python_endpoint_hit_rows_changed=len(legacy_python_boundary & changed_keys),
+                  formal_dll_endpoint_hit_rows_changed=len(formal_dll_boundary & changed_keys),
                   actual_block_truncations=sum(r['truncated'] for r in audits.values()),
                   boundary_unknown_rows=sum(not r['boundary_known'] for r in audits.values()),
                   frame_gap_rows=sum(r.get('frame_index_gap_count',0)>0 for r in audits.values()),

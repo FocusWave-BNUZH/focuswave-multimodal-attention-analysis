@@ -50,7 +50,7 @@ def test_block_stop_from_real_event_schema(tmp_path):
 
 
 def test_exclusive_end_effective_start_and_producer_summaries(monkeypatch):
-    timestamps = np.column_stack([np.arange(3002)]*2 + [np.arange(3002)*10])
+    timestamps = np.column_stack([np.arange(3002), np.arange(3002)*10, np.arange(3002)*10])
     captured = {}
     def sliced(files, lo, hi):
         captured['slice'] = (lo, hi)
@@ -58,6 +58,7 @@ def test_exclusive_end_effective_start_and_producer_summaries(monkeypatch):
     monkeypatch.setattr(adapter, 'slice_iq', sliced)
     def course(*args, **kwargs):
         captured['length'] = len(args[0])
+        captured['course_kwargs'] = kwargs
         return dict(freq_median_bpm=71.0, time_median_bpm=72.0, fused_median_bpm=73.0,
                     points=[dict(confidence=.2),dict(confidence=.6)], signal_quality=dict(usable_ratio=.5))
     algo = SimpleNamespace(_as_range_cube=lambda x:x,
@@ -68,11 +69,13 @@ def test_exclusive_end_effective_start_and_producer_summaries(monkeypatch):
         WAVELENGTH_MM=4., _select_breath_candidate=lambda x:(None,.2,None,None),
         _phase_stability_score=lambda x:(.9,None))
     result = adapter.process_probe(algo, dict(row(), window_effective_start_unix_ms='1000'), [], timestamps, {})
-    assert captured == {'slice':(100,3000), 'length':2900}
+    assert captured['slice'] == (100, 3000)
+    assert captured['length'] == 2900
     assert result['mmwave_hr_fused_bpm_median'] == 73.
     assert result['mmwave_hr_usable_window_fraction'] == .5
     assert result['mmwave_hr_mean_confidence'] == .4
     assert result['mmwave_rmssd_ms'] is None
+    assert captured['course_kwargs'] == {'window_s': 25.0, 'step_s': 5.0}
 
 
 def test_npz_mapping_and_slice(tmp_path):

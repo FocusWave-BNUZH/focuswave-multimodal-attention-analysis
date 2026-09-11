@@ -174,7 +174,7 @@ def main():
         reason = None
         try:
             timestamps = adapter.load_timestamps(root/'mmwave')
-            if np.any(np.diff(timestamps[:,2]) < 0) or np.any(np.diff(timestamps[:,0]) <= 0):
+            if np.any(np.diff(adapter.alignment_timestamps(timestamps)) < 0) or np.any(np.diff(timestamps[:,0]) <= 0):
                 raise ValueError('Nonmonotonic time or duplicate/reordered frame index')
             files = adapter.load_npz_files(root/'mmwave', session)
             cube = IndexedCube(files, len(timestamps))
@@ -186,10 +186,22 @@ def main():
         for row in session_rows:
             base, boundary_known = canonical_row(row, starts, ends)
             item = {k:row[k] for k in KEYS}
-            item.update(boundary_known=boundary_known, truncated=boundary_known and int(base['window_effective_start_unix_ms']) > int(base['window_start_unix_ms']),
-                        old_endpoint_hit=bool(timestamps is not None and np.any(timestamps[:,2] == int(row['window_end_unix_ms']))))
+            item.update(
+                boundary_known=boundary_known,
+                truncated=boundary_known and int(base['window_effective_start_unix_ms']) > int(base['window_start_unix_ms']),
+                # Audit-only: neither endpoint flag participates in slicing, QC, or feature generation.
+                legacy_python_endpoint_hit=bool(
+                    timestamps is not None
+                    and timestamps.shape[1] > adapter.PYTHON_PROCESS_TIMESTAMP_COLUMN
+                    and np.any(timestamps[:, adapter.PYTHON_PROCESS_TIMESTAMP_COLUMN] == int(row['window_end_unix_ms']))
+                ),
+                formal_dll_endpoint_hit=bool(
+                    timestamps is not None
+                    and np.any(adapter.alignment_timestamps(timestamps) == int(row['window_end_unix_ms']))
+                ),
+            )
             if timestamps is not None and boundary_known:
-                lo, hi = np.searchsorted(timestamps[:,2], [int(base['window_effective_start_unix_ms']),int(base['window_end_unix_ms'])], side='left')
+                lo, hi = np.searchsorted(adapter.alignment_timestamps(timestamps), [int(base['window_effective_start_unix_ms']),int(base['window_end_unix_ms'])], side='left')
                 item['frame_index_gap_count'] = int(np.count_nonzero(np.diff(timestamps[lo:hi,0]) != 1))
             if reason:
                 out = missing(base, 'STRUCTURAL_MISSING' if timestamps is None else 'QC_FAIL', reason, timestamps is not None)
@@ -216,16 +228,17 @@ def main():
         json.dump(audit, f, indent=2, allow_nan=False)
     if any(sha(adapter.ALGO_ROOT/p) != value for p,value in source_hashes.items()) or sha(args.baseline) != old_hash:
         raise RuntimeError('Source changed during run')
-    manifest = dict(schema='mmwave_probe_merge_ready_v1', pipeline_version='issue33-v2', run_id=args.run_id,
+    manifest = dict(schema='mmwave_probe_merge_ready_v1', pipeline_version='issue34-dll-cutover-v1', run_id=args.run_id,
                     source_commit=commit, source_tree_dirty=dirty, source_hashes=source_hashes,
                     baseline_sha256=old_hash, output_sha256=sha(out_csv), inputs=source_inputs,
                     rows=len(out_rows), sessions=len({r['session_id'] for r in out_rows}),
                     state_counts=dict(Counter(r['mmwave_state'] for r in out_rows)),
                     run_utc=datetime.now(timezone.utc).isoformat(), python=sys.version, numpy=np.__version__,
-                    parameters=dict(fs=adapter.FS, course_s=adapter.COURSE_S, step_s=5.0, timestamp_column=2, end_exclusive=True),
+                    parameters=dict(fs=adapter.FS, course_s=adapter.COURSE_S, step_s=5.0,
+                                    end_exclusive=True, **adapter.timestamp_provenance()),
                     physiology_role='SUPPORTING_HOLD / NOT_PRIMARY', hrv_fields='EXCLUDE / null',
                     scientific_admission='NOT_PROMOTED', models_trained=False,
-                    timestamp_limitation='Python write-time retained for controlled issue33 replay; DLL-time transfer to formal cohort is not yet validated.')
+                    timestamp_limitation='DLL host receive/enqueue time is the formal alignment clock; it is not radar hardware frame-start time. Python write time is retained only for processing-delay QC.')
     with out_csv.with_name(out_csv.stem+'_manifest.json').open('x', encoding='utf-8') as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2, allow_nan=False)
 

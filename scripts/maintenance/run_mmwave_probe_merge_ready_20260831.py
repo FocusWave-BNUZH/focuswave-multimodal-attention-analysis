@@ -27,6 +27,9 @@ FS = 100.0
 COURSE_S = 25.0
 BIN_SPACING_M = 0.037
 MIN_FRAMES = 200
+ALIGNMENT_TIMESTAMP_SOURCE = "dll_host_receive"
+ALIGNMENT_TIMESTAMP_COLUMN = 1
+PYTHON_PROCESS_TIMESTAMP_COLUMN = 2
 
 
 def load_module(path: Path, name: str):
@@ -83,9 +86,33 @@ def load_timestamps(mmw_root: Path) -> np.ndarray:
     if path is None:
         raise FileNotFoundError(f"{mmw_root}: no timestamps csv")
     values = np.atleast_2d(np.loadtxt(path, delimiter=",", dtype=np.int64))
-    if values.shape[1] < 3:
-        raise ValueError(f"{path}: fewer than 3 columns")
-    return values[:, :3]
+    if values.shape[1] <= ALIGNMENT_TIMESTAMP_COLUMN:
+        raise ValueError(f"{path}: missing DLL host receive timestamp column {ALIGNMENT_TIMESTAMP_COLUMN}")
+    return values
+
+
+def alignment_timestamps(timestamps: np.ndarray) -> np.ndarray:
+    values = np.asarray(timestamps)
+    if values.ndim != 2 or values.shape[1] <= ALIGNMENT_TIMESTAMP_COLUMN:
+        raise ValueError("DLL host receive timestamp is required; Python processing time is not an alignment fallback")
+    return values[:, ALIGNMENT_TIMESTAMP_COLUMN].astype(np.int64)
+
+
+def processing_delay_ms(timestamps: np.ndarray) -> np.ndarray | None:
+    values = np.asarray(timestamps)
+    if values.ndim != 2 or values.shape[1] <= PYTHON_PROCESS_TIMESTAMP_COLUMN:
+        return None
+    return values[:, PYTHON_PROCESS_TIMESTAMP_COLUMN].astype(np.int64) - alignment_timestamps(values)
+
+
+def timestamp_provenance() -> dict[str, object]:
+    return {
+        "timestamp_source": ALIGNMENT_TIMESTAMP_SOURCE,
+        "timestamp_column": ALIGNMENT_TIMESTAMP_COLUMN,
+        "timestamp_semantics": "DLL host receive/enqueue Unix ms; not radar hardware frame-start time",
+        "python_processing_timestamp_column": PYTHON_PROCESS_TIMESTAMP_COLUMN,
+        "python_processing_timestamp_role": "processing-delay QC only; excluded from formal frame slicing",
+    }
 
 
 def load_npz_files(mmw_root: Path, session: str) -> list[Path]:
@@ -130,11 +157,12 @@ def process_probe(algo, row: dict, files: list[Path], timestamps: np.ndarray, pr
 
     out = dict(row)
 
-    i0 = int(np.searchsorted(timestamps[:, 2], win_start, side="left"))
-    i1 = int(np.searchsorted(timestamps[:, 2], win_end, side="left"))
+    alignment_ts = alignment_timestamps(timestamps)
+    i0 = int(np.searchsorted(alignment_ts, win_start, side="left"))
+    i1 = int(np.searchsorted(alignment_ts, win_end, side="left"))
     n_frames = i1 - i0
 
-    ts_window = timestamps[i0:i1, 2].astype(np.int64) if n_frames > 0 else np.empty(0, dtype=np.int64)
+    ts_window = alignment_ts[i0:i1] if n_frames > 0 else np.empty(0, dtype=np.int64)
     if n_frames > 1:
         intervals = np.diff(ts_window)
         median_interval_ms = float(np.median(intervals)) if len(intervals) else None
