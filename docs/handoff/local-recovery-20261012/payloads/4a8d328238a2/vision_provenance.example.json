@@ -1,0 +1,10 @@
+{
+  "cohort_id": "J",
+  "source_data_root": "J:\\Data",
+  "timebase": "mmWave-relative seconds derived from source timestamps.csv; RGB/NIR event windows are aligned to the same origin",
+  "max_alignment_error_s": 1.0,
+  "vision_sha256": "replace_with_sha256_of_the_feature_csv",
+  "generator_script": "path/to/current_j_cohort_vision_extraction.py",
+  "generated_at": "YYYY-MM-DDTHH:MM:SS+08:00",
+  "notes": "Only use features from the same J formal sessions. Do not aggregate or borrow features from E_Data or other cohorts."
+}

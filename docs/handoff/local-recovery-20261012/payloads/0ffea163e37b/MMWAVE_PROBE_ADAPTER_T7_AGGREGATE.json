@@ -1,0 +1,17 @@
+{
+  "status": "PARTIAL",
+  "canonical_probe_key": ["repeat_participant_id", "session_id", "block_id", "probe_id", "window_name"],
+  "timeline_rows": 1440,
+  "source_index_rows": 0,
+  "matched_source_rows": 0,
+  "unmatched_timeline_rows": 1440,
+  "schema_validation_rows": 1440,
+  "unique_nonnull_key": true,
+  "key_set_equal_to_canonical_timeline": true,
+  "state_counts": {"STRUCTURAL_MISSING": 1440},
+  "missing_reason_counts": {"NO_CANONICAL_MMWAVE_PROBE_SOURCE": 1440},
+  "eligibility_counts": {"EXCLUDE_FROM_FINAL_MULTIMODAL_CONTRIBUTION": 1440},
+  "final_multimodal_contribution_eligible_rows": 0,
+  "scientific_gate": "BLOCKED_FOR_FINAL_CONTRIBUTION",
+  "reason": "T5 HR/BR formal validity has not passed and T6 HRV remains excluded; no exact five-column-keyed formal mmWave source index exists."
+}

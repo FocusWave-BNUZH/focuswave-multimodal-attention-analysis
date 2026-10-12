@@ -1,0 +1,41 @@
+{
+  "schema_version": "focuswave-multimodal-ai-feature-matrix-v1",
+  "unit": "aligned probe/window",
+  "required_keys": [
+    "site",
+    "session_id",
+    "probe_id",
+    "repeat_participant_id",
+    "identity_status",
+    "id_scope"
+  ],
+  "target": {
+    "column": "target",
+    "type": "binary_integer",
+    "allowed_values": [0, 1],
+    "note": "Target mapping is frozen upstream; the fusion runner does not remap labels."
+  },
+  "feature_blocks": {
+    "context": "context__*",
+    "mmwave": "mmwave__*",
+    "nir": "nir__*",
+    "rgb": "rgb__*"
+  },
+  "quality_fields": {
+    "mmwave": ["mmwave_available", "mmwave_quality"],
+    "nir": ["nir_available", "nir_quality"],
+    "rgb": ["rgb_available", "rgb_quality"]
+  },
+  "primary_requirements": [
+    "identity_status == resolved",
+    "id_scope == global_central",
+    "all three sensor availability fields equal 1",
+    "quality fields finite and within [0, 1]",
+    "no duplicate site/session_id/probe_id key"
+  ],
+  "interpretation_boundary": [
+    "quality is a producer-defined reliability input, not physiology validity",
+    "gating weights describe model behavior, not causal contribution",
+    "row-level participant data remains local-only"
+  ]
+}

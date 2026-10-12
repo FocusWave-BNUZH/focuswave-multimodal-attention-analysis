@@ -1,0 +1,111 @@
+{
+  "source": "D:\\acq_mmwave_data\\sub-2_\\mmwave\\sub-2_mmwave_datacube_part001.npz",
+  "keys": [
+    "tx0_rx0",
+    "tx0_rx1",
+    "tx0_rx2",
+    "tx0_rx3",
+    "tx1_rx0",
+    "tx1_rx1",
+    "tx1_rx2",
+    "tx1_rx3"
+  ],
+  "shape": [
+    1000,
+    256,
+    8
+  ],
+  "sampling_hz": 100.0,
+  "range_coordinate_formula": "bin * 0.08 m; no bias",
+  "distance_gate_m": [
+    0.3,
+    1.5
+  ],
+  "auto_best_channel": 2,
+  "selected_breath": {
+    "channel": 3,
+    "breath_bin": 13,
+    "heart_bin": 9,
+    "breath_score": 1103.0449398789435,
+    "heart_score": 3.3372650783796516,
+    "n_candidates": 5
+  },
+  "selected_heart": {
+    "channel": 1,
+    "breath_bin": 9,
+    "heart_bin": 9,
+    "breath_score": 665.7049200369867,
+    "heart_score": 4.692279911065364,
+    "n_candidates": 5
+  },
+  "all_channel_summaries": [
+    {
+      "channel": 0,
+      "breath_bin": 16,
+      "heart_bin": 9,
+      "breath_score": 340.2560384700793,
+      "heart_score": 3.7625774087521515,
+      "n_candidates": 3
+    },
+    {
+      "channel": 1,
+      "breath_bin": 9,
+      "heart_bin": 9,
+      "breath_score": 665.7049200369867,
+      "heart_score": 4.692279911065364,
+      "n_candidates": 5
+    },
+    {
+      "channel": 2,
+      "breath_bin": 15,
+      "heart_bin": 16,
+      "breath_score": 344.5811265840798,
+      "heart_score": 2.783753078510868,
+      "n_candidates": 5
+    },
+    {
+      "channel": 3,
+      "breath_bin": 13,
+      "heart_bin": 9,
+      "breath_score": 1103.0449398789435,
+      "heart_score": 3.3372650783796516,
+      "n_candidates": 5
+    },
+    {
+      "channel": 4,
+      "breath_bin": 14,
+      "heart_bin": 9,
+      "breath_score": 244.41426644376514,
+      "heart_score": 3.237371916960764,
+      "n_candidates": 3
+    },
+    {
+      "channel": 5,
+      "breath_bin": 9,
+      "heart_bin": 9,
+      "breath_score": 235.0194642276795,
+      "heart_score": 3.3210420153777993,
+      "n_candidates": 2
+    },
+    {
+      "channel": 6,
+      "breath_bin": 9,
+      "heart_bin": 9,
+      "breath_score": 327.1441830684951,
+      "heart_score": 3.513189792254615,
+      "n_candidates": 4
+    },
+    {
+      "channel": 7,
+      "breath_bin": 14,
+      "heart_bin": 15,
+      "breath_score": 58.45090604620675,
+      "heart_score": 1.5839671135896431,
+      "n_candidates": 3
+    }
+  ],
+  "notes": [
+    "Stored NPZ is already SDK DatacubeConversion output; this script does not run classification or alter raw files.",
+    "Temporal-mean subtraction panel is deliberately labeled audit-only because production selection does not apply it."
+  ]
+}
