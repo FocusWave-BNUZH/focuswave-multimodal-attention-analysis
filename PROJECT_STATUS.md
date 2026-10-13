@@ -426,3 +426,7 @@ producer worktree 仍然保留。
 ## 2026-10-13｜FW-GIT-REMOTE-TIDY-20261013 历史源码归档与分支收尾
 
 252份独有便携源码/过程快照收录于 `docs/archive/local-recovery-20261012`；当前科学代码、配置、结果与执行入口不变。已完成分支按主线历史恢复，三条被替代历史线按固定版本标签保留；未完成审阅、问题33、在用历史报告线和master回退基线保留。分支详情见 `docs/repository/BRANCH_RETIREMENT_EXECUTION_V3.md`，本轮不运行研究分析。
+
+## 2026-10-13｜FW-GIT-BRANCH-CONTENT-AUDIT-20261013 剩余分支逐内容核验
+
+中央8条与单模态7条分支已完成源码/配置/历史读取。四条8月行为分支是旧候选与基线；当前正式行为入口在单模态仓库的后续实现。q1属于旧报告与本机迁移现场，不作为当前报告权威；master已有精确旧基线标签。收敛目标与旧审阅/本地现场前置条件见 `docs/repository/REMAINING_BRANCH_CONTENT_AUDIT_20261013.md`，本轮未关闭审阅、删除分支或修改科学代码。
