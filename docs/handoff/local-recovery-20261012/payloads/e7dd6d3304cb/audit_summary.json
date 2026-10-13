@@ -1,0 +1,69 @@
+{
+  "sessions": [
+    "sub-3_",
+    "sub-4_",
+    "sub-97793_"
+  ],
+  "max_frames_per_session": 6000,
+  "fs_assumed_hz": 100.0,
+  "bands_hz": {
+    "br": [
+      0.1,
+      0.5
+    ],
+    "hr": [
+      0.8,
+      2.0
+    ]
+  },
+  "channel_order": [
+    "tx0_rx0",
+    "tx0_rx1",
+    "tx0_rx2",
+    "tx0_rx3",
+    "tx1_rx0",
+    "tx1_rx1",
+    "tx1_rx2",
+    "tx1_rx3"
+  ],
+  "groups": {
+    "TX0": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "TX1": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "A4_vertical_azimuth": [
+      0,
+      1,
+      4,
+      5
+    ],
+    "A4_vertical_elevation": [
+      3,
+      2,
+      1
+    ],
+    "C8": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "notes": [
+    "This is a read-only 3-session, 60-second-per-session audit window.",
+    "Coherence is computed on unwrapped slow-time phase; it is not an ECG validation result.",
+    "Range bins are selected by mean complex magnitude power with bins 0-3 excluded and a 3-bin separation heuristic."
+  ]
+}

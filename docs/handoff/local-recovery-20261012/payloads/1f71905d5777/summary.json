@@ -1,0 +1,20 @@
+{
+  "analysis": "range-bin gate sensitivity",
+  "bin_lo": 5,
+  "bin_hi": 32,
+  "sessions": [
+    "sub-97794_",
+    "sub-97795_",
+    "sub-97796_",
+    "sub-9779_"
+  ],
+  "reference_windows": 80,
+  "completed_model_rows": 400,
+  "failed_model_rows": 0,
+  "fixed_global_offset_s": 0.365,
+  "matching_tolerance_ms": 150.0,
+  "notes": [
+    "Radar-only range selection gate; ECG not used for bin or weight selection.",
+    "Sensitivity only; do not replace unconstrained analysis or S1 baseline."
+  ]
+}

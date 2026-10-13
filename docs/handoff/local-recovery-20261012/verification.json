@@ -1,5 +1,5 @@
 {
-  "files": 230,
+  "files": 252,
   "all_byte_identical": true,
   "checks": [
     {
@@ -1151,6 +1151,116 @@
       "file": "payloads/b7aa30003d28/build_formal_mmwave_sample_v1.py",
       "byte_identical": true,
       "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/5cdca2b68ce3/audit_rs6240_high_range_bins_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/6b1ad10a50be/evaluate_rs6240_phase_fusion.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/26fd0eac087b/evaluate_rs6240_phase_fusion_cross_session_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/93680f21472e/evaluate_rs6240_phase_fusion_power_gate_sensitivity_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/644e9b0cd6a8/evaluate_rs6240_phase_fusion_range_gate_sensitivity_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/a415d7a9403a/evaluate_rs6240_power_gate_vs_frozen_s1_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/071be983c4e5/summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/5bd6c57ff9e3/fusion_ecg_summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/1f71905d5777/summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/a4536f3eb043/summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/e5ec3f4a44c2/rs6240_pr1_channel_audit.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/e7dd6d3304cb/audit_summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/27dd46ef17f4/current_multimodal_readiness_20260830.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/25e084493162/gate_report.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/924f5c5e727d/issue12_nir_ladder_20260827.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/7947bc770076/summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/04b3fe723ff9/fusion_ecg_summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/bf5341bee4e1/audit_summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/2010a1dce49e/d1_beijing_zhuhai_canonical_fields.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/81cff05d6fe9/D1_BEIJING_ZHUHAI_CANONICAL_HARMONIZATION_20260826.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/9c430dd57537/2026-08-26-beijing-zhuhai-protocol-identity-harmonization.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/ac26580df302/2026-08-26-beijing-zhuhai-protocol-identity-harmonization.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
     }
   ],
   "not_claimed": [

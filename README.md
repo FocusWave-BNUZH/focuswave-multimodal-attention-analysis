@@ -90,4 +90,4 @@ tests/         schema/path/contract smoke checks
 
 ## 2026-10-12 本机历史资料补录
 
-本机未发布的历史源码和过程证据已按内容去重保存于[230项历史快照](docs/handoff/local-recovery-20261012/README.md)。原始输入、大型结果和身份资料不在其中；快照用于追溯，不改变当前正式入口或冻结结果。
+本机未发布的历史源码和过程证据已按内容去重保存于[252项历史快照](docs/handoff/local-recovery-20261012/README.md)。原始输入、大型结果和身份资料不在其中；快照用于追溯，不改变当前正式入口或冻结结果。

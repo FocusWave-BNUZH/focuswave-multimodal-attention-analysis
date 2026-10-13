@@ -3799,6 +3799,364 @@
         }
       ],
       "usage": "Use original-path and recorded version/input contracts to reconstruct; do not execute the isolated snapshot as current pipeline."
+    },
+    {
+      "snapshot": "payloads/5cdca2b68ce3/audit_rs6240_high_range_bins_v1.py",
+      "original_path": "work/audit_rs6240_high_range_bins_v1.py",
+      "git_blob": "5cdca2b68ce38759dcd2611811e1a83f881c23b5",
+      "sha256": "f3d4e8b41ef824cb17d132549aa5430c1d1ca704a4acca69b77188401c825d75",
+      "bytes": 1534,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/audit_rs6240_high_range_bins_v1.py",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/6b1ad10a50be/evaluate_rs6240_phase_fusion.py",
+      "original_path": "work/evaluate_rs6240_phase_fusion.py",
+      "git_blob": "6b1ad10a50bee82ab0d9143f731058db593bc397",
+      "sha256": "18d6a2a282211cdeeed84f96447e30672fe1f34abacc1cf352876ccbca36def2",
+      "bytes": 13577,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/evaluate_rs6240_phase_fusion.py",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/26fd0eac087b/evaluate_rs6240_phase_fusion_cross_session_v1.py",
+      "original_path": "work/evaluate_rs6240_phase_fusion_cross_session_v1.py",
+      "git_blob": "26fd0eac087b43ce9ae12701f6c51449db51f6be",
+      "sha256": "b830125d31d900cdfd81ba2a5c7eafbc09f993476575d2fe6755fefde26d12a1",
+      "bytes": 9140,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/evaluate_rs6240_phase_fusion_cross_session_v1.py",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/93680f21472e/evaluate_rs6240_phase_fusion_power_gate_sensitivity_v1.py",
+      "original_path": "work/evaluate_rs6240_phase_fusion_power_gate_sensitivity_v1.py",
+      "git_blob": "93680f21472eea5413fff928f5560ba1a46b582f",
+      "sha256": "5e10fcde970b50a1fcbafb6e560accaf70197e782d8c52e70e1fb251156c165b",
+      "bytes": 825,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/evaluate_rs6240_phase_fusion_power_gate_sensitivity_v1.py",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/644e9b0cd6a8/evaluate_rs6240_phase_fusion_range_gate_sensitivity_v1.py",
+      "original_path": "work/evaluate_rs6240_phase_fusion_range_gate_sensitivity_v1.py",
+      "git_blob": "644e9b0cd6a888cf40fdc742d8f8838feba34210",
+      "sha256": "b72608bc1a2b8572db89c5e47b1972c66049c49afbfb4dc0b6f10ba5d7be81a0",
+      "bytes": 6147,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/evaluate_rs6240_phase_fusion_range_gate_sensitivity_v1.py",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/a415d7a9403a/evaluate_rs6240_power_gate_vs_frozen_s1_v1.py",
+      "original_path": "work/evaluate_rs6240_power_gate_vs_frozen_s1_v1.py",
+      "git_blob": "a415d7a9403afb0914fa565969fc0e277e02279f",
+      "sha256": "d538e89049f963819da7091c9fea15d1ba6a29f3943cd7be646c566de71074a2",
+      "bytes": 5100,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/evaluate_rs6240_power_gate_vs_frozen_s1_v1.py",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/071be983c4e5/summary.json",
+      "original_path": "work/rs6240_phase_fusion_cross_session_v1/summary.json",
+      "git_blob": "071be983c4e547db96742c3dfa0985ac74a3b675",
+      "sha256": "5678467575c00f16fe037b0f5b3e1d9c3bf57b73dc3e0d985a59f959989896ab",
+      "bytes": 988,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/rs6240_phase_fusion_cross_session_v1/summary.json",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/5bd6c57ff9e3/fusion_ecg_summary.json",
+      "original_path": "work/rs6240_phase_fusion_ecg_v1/fusion_ecg_summary.json",
+      "git_blob": "5bd6c57ff9e3acdfed92b3d7df506f783395a122",
+      "sha256": "639d83c06d2411e65094e64bba674e36289a5b5119e2f6177dfe0fa0530705de",
+      "bytes": 2414,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/rs6240_phase_fusion_ecg_v1/fusion_ecg_summary.json",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/1f71905d5777/summary.json",
+      "original_path": "work/rs6240_phase_fusion_power_gate_sensitivity_v1/summary.json",
+      "git_blob": "1f71905d57778b3cac0b0387558ffaba207e360b",
+      "sha256": "400295aebe3c6ec5d58e788946d759edf4b6daafef875b2414308a35fb96c9af",
+      "bytes": 517,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/rs6240_phase_fusion_power_gate_sensitivity_v1/summary.json",
+          "commit": null
+        },
+        {
+          "kind": "working_tree",
+          "original_path": "work/rs6240_phase_fusion_range_gate_sensitivity_v1/summary.json",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/a4536f3eb043/summary.json",
+      "original_path": "work/rs6240_power_gate_vs_frozen_s1_v1/summary.json",
+      "git_blob": "a4536f3eb0439199d4e167ac75878e0a11aa0e5e",
+      "sha256": "1a2af9be09605358885ab42754f883c80e10d981e0cefa77e43a63e893a92478",
+      "bytes": 538,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/rs6240_power_gate_vs_frozen_s1_v1/summary.json",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/e5ec3f4a44c2/rs6240_pr1_channel_audit.py",
+      "original_path": "work/rs6240_pr1_channel_audit.py",
+      "git_blob": "e5ec3f4a44c2d6941c0ff2642e3fa564a55e0ff3",
+      "sha256": "3705398c5735e581c7f57c69667db6154a8bd93fd66a5fc8a5194e539195bb15",
+      "bytes": 10913,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/rs6240_pr1_channel_audit.py",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/e7dd6d3304cb/audit_summary.json",
+      "original_path": "work/rs6240_pr1_channel_audit_v1/audit_summary.json",
+      "git_blob": "e7dd6d3304cb7098219c4a699e5cb104fa450b83",
+      "sha256": "e34f4b960bcc8ece982787dddd27f6f4181241ea5172a5b509b7e22940c787ab",
+      "bytes": 1100,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/rs6240_pr1_channel_audit_v1/audit_summary.json",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/27dd46ef17f4/current_multimodal_readiness_20260830.json",
+      "original_path": "work/current_multimodal_readiness_20260830.json",
+      "git_blob": "27dd46ef17f4c1ee4320c1b7dc0fbae94b42b42d",
+      "sha256": "ba70058798d900aa44a58e5000db6d9882f47fe33e28ac8264f711b23e84f9f4",
+      "bytes": 1102,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/current_multimodal_readiness_20260830.json",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/25e084493162/gate_report.json",
+      "original_path": "work/prototype_current_preflight/gate_report.json",
+      "git_blob": "25e08449316236f8c324c7e246b8818df0e93c81",
+      "sha256": "45acbe9a34949facf43a4f5f573ffe10c9379aebc5f1f9ad3acc430bf2dc54cb",
+      "bytes": 628,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/prototype_current_preflight/gate_report.json",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/924f5c5e727d/issue12_nir_ladder_20260827.py",
+      "original_path": "work/issue12_nir_ladder_20260827.py",
+      "git_blob": "924f5c5e727dd9ac007968ef781e16159bb06c3f",
+      "sha256": "8693a409e45d45109d49cab72d08b7cf351223398614610a86aac864602021dd",
+      "bytes": 8105,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "working_tree",
+          "original_path": "work/issue12_nir_ladder_20260827.py",
+          "commit": null
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/7947bc770076/summary.json",
+      "original_path": "work/rs6240_ecg_cross_session_v1/summary.json",
+      "git_blob": "7947bc770076311ed1f4dc57e5109c3c6f563fa5",
+      "sha256": "5af944ad03f9c8a60ac51344989515932c0c98ccf169e0d873938ec1a2e18e22",
+      "bytes": 903,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "committed_history",
+          "original_path": "work/rs6240_ecg_cross_session_v1/summary.json",
+          "commit": "49552a96d7e7665cca6f700bbad2a561db7f6d05"
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/04b3fe723ff9/fusion_ecg_summary.json",
+      "original_path": "work/rs6240_ecg_evaluator_v1/fusion_ecg_summary.json",
+      "git_blob": "04b3fe723ff93af2615c377246690a57de596a5d",
+      "sha256": "c10555620d943d7e45bf9f079fae7b4a45335491bb81dc6fb95537807e2df292",
+      "bytes": 3859,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "committed_history",
+          "original_path": "work/rs6240_ecg_evaluator_v1/fusion_ecg_summary.json",
+          "commit": "49552a96d7e7665cca6f700bbad2a561db7f6d05"
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/bf5341bee4e1/audit_summary.json",
+      "original_path": "work/rs6240_timestamp_coherence_v1/audit_summary.json",
+      "git_blob": "bf5341bee4e19fd615d5ce7a7564ce3c22a2daeb",
+      "sha256": "4fbd2b640d9be526497d8fb44e0c5412e3a899f605bfd7a3573a2c772045f33f",
+      "bytes": 1377,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "committed_history",
+          "original_path": "work/rs6240_timestamp_coherence_v1/audit_summary.json",
+          "commit": "49552a96d7e7665cca6f700bbad2a561db7f6d05"
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/2010a1dce49e/d1_beijing_zhuhai_canonical_fields.md",
+      "original_path": "docs/methodology/d1_beijing_zhuhai_canonical_fields.md",
+      "git_blob": "2010a1dce49e355543662c67e4c637a18aa2bf43",
+      "sha256": "455cd23d451ff403790b79696a47735a037f5578c56a0f33aa3eb9a335556047",
+      "bytes": 1436,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "committed_history",
+          "original_path": "docs/methodology/d1_beijing_zhuhai_canonical_fields.md",
+          "commit": "bb5535b97b04e315d3cdb748ef1cb8e8778a7939"
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/81cff05d6fe9/D1_BEIJING_ZHUHAI_CANONICAL_HARMONIZATION_20260826.md",
+      "original_path": "docs/handoff/D1_BEIJING_ZHUHAI_CANONICAL_HARMONIZATION_20260826.md",
+      "git_blob": "81cff05d6fe940c117906bca757e339522bcab80",
+      "sha256": "96850df1240611b5fdfd4aefa67daee4db8f4035fae50d93326daf972acf2698",
+      "bytes": 7462,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "committed_history",
+          "original_path": "docs/handoff/D1_BEIJING_ZHUHAI_CANONICAL_HARMONIZATION_20260826.md",
+          "commit": "524cb2080e4b23a68c1f3b310b9a2e42d4fcfcdb"
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/9c430dd57537/2026-08-26-beijing-zhuhai-protocol-identity-harmonization.md",
+      "original_path": "docs/decisions/2026-08-26-beijing-zhuhai-protocol-identity-harmonization.md",
+      "git_blob": "9c430dd57537d80601fd746e65e7b78fd8114bdd",
+      "sha256": "54b517714ab928b7d07e0f369be59e85d228433094c241bd9c41c878268e2e6c",
+      "bytes": 5757,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "committed_history",
+          "original_path": "docs/decisions/2026-08-26-beijing-zhuhai-protocol-identity-harmonization.md",
+          "commit": "cddbd8a0039bd25e201023b0de027472fc51f93f"
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
+    },
+    {
+      "snapshot": "payloads/ac26580df302/2026-08-26-beijing-zhuhai-protocol-identity-harmonization.md",
+      "original_path": "docs/decisions/2026-08-26-beijing-zhuhai-protocol-identity-harmonization.md",
+      "git_blob": "ac26580df302dac6014e6b85194898352bc5c907",
+      "sha256": "1e7173d952ad88652d6f6218c3be9075e74b52d884057e039b6de82768fe266b",
+      "bytes": 4572,
+      "classification": "historical_source_or_provenance_not_current_pipeline",
+      "sources": [
+        {
+          "kind": "committed_history",
+          "original_path": "docs/decisions/2026-08-26-beijing-zhuhai-protocol-identity-harmonization.md",
+          "commit": "6908666a3b7caeaf076dd83a0ab3a19f984be737"
+        }
+      ],
+      "usage": "Historical immutable source. Reconstruct original version/input contracts before use; not active pipeline."
     }
-  ]
+  ],
+  "completed_at_date": "2026-10-13"
 }

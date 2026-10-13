@@ -1,0 +1,22 @@
+{
+  "analysis": "physical power-gated candidate versus frozen S1",
+  "bin_gate": [
+    5,
+    32
+  ],
+  "sessions": [
+    "sub-97794_",
+    "sub-97795_",
+    "sub-97796_",
+    "sub-9779_"
+  ],
+  "reference_windows": 80,
+  "completed_model_rows": 400,
+  "failed_model_rows": 0,
+  "fixed_global_offset_s": 0.365,
+  "matching_tolerance_ms": 150.0,
+  "notes": [
+    "S1 retains unconstrained frozen selection; only candidate models use radar-only power-gated bin 5-32.",
+    "Experimental only; no mainline change."
+  ]
+}
