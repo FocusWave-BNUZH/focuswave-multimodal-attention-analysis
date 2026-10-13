@@ -1,0 +1,30 @@
+{
+  "evaluator_version": "ECG evaluator v1",
+  "sessions": [
+    "sub-97794_",
+    "sub-97795_",
+    "sub-97796_",
+    "sub-9779_"
+  ],
+  "excluded_development_session": "sub-97793_",
+  "reference_windows": 80,
+  "completed_model_rows": 400,
+  "failed_model_rows": 0,
+  "models": [
+    "S1",
+    "T0",
+    "T1",
+    "A4",
+    "C8-PH"
+  ],
+  "fixed_global_offset_s": 0.365,
+  "matching_tolerance_ms": 150.0,
+  "weight_source": "radar-only phase/power QC; no ECG labels used for selection",
+  "notes": [
+    "Experimental cross-session phase-domain ablation; does not modify S1 mainline.",
+    "The development session sub-97793_ is excluded from this independent summary.",
+    "IBI and RMSSD are computed only from adjacent matched beats by the fixed evaluator.",
+    "No complex coherent fusion was run; C8-PH means eight-channel phase-domain fusion.",
+    "No candidate may enter the formal baseline without session-level ECG review and confirmation."
+  ]
+}

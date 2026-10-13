@@ -1,0 +1,61 @@
+{
+  "reference_windows": 10,
+  "models": {
+    "S1": {
+      "hr_abs_error_bpm": 8.66821336892354,
+      "ibi_mae_ms_truncated": 171.5144592743451,
+      "ibi_rmse_ms_truncated": 229.03074459812925,
+      "rmssd_abs_error_ms": 252.92557092926035,
+      "beat_recall": 0.572302108460645,
+      "false_beat_rate": 0.3523286078549236,
+      "matched_timing_mae_ms": 76.24061418641332,
+      "resp_harmonic_mislock": 0.3
+    },
+    "T0": {
+      "hr_abs_error_bpm": 7.418213368923537,
+      "ibi_mae_ms_truncated": 157.03923577325665,
+      "ibi_rmse_ms_truncated": 209.19027482003284,
+      "rmssd_abs_error_ms": 229.5622326382971,
+      "beat_recall": 0.5968442330027697,
+      "false_beat_rate": 0.3441156836278787,
+      "matched_timing_mae_ms": 74.27260282728012,
+      "resp_harmonic_mislock": 0.3
+    },
+    "T1": {
+      "hr_abs_error_bpm": 10.638213368923537,
+      "ibi_mae_ms_truncated": 182.62590849920647,
+      "ibi_rmse_ms_truncated": 241.77502906144173,
+      "rmssd_abs_error_ms": 253.92378142475144,
+      "beat_recall": 0.5858668364156169,
+      "false_beat_rate": 0.3290518984636631,
+      "matched_timing_mae_ms": 79.1691598544461,
+      "resp_harmonic_mislock": 0.3
+    },
+    "A4": {
+      "hr_abs_error_bpm": 9.748213368923539,
+      "ibi_mae_ms_truncated": 175.28070044199214,
+      "ibi_rmse_ms_truncated": 229.22583119980672,
+      "rmssd_abs_error_ms": 237.08377362666306,
+      "beat_recall": 0.5910589207540426,
+      "false_beat_rate": 0.3313019113019113,
+      "matched_timing_mae_ms": 73.94601850147913,
+      "resp_harmonic_mislock": 0.5
+    },
+    "C8-PH": {
+      "hr_abs_error_bpm": 10.5307665604129,
+      "ibi_mae_ms_truncated": 190.84071522175097,
+      "ibi_rmse_ms_truncated": 247.33160314095844,
+      "rmssd_abs_error_ms": 255.9691831948299,
+      "beat_recall": 0.5756747520771912,
+      "false_beat_rate": 0.3418664416497234,
+      "matched_timing_mae_ms": 74.78248310994874,
+      "resp_harmonic_mislock": 0.2
+    }
+  },
+  "notes": [
+    "This first pass evaluates ten calibration windows from sub-97793_ only.",
+    "Weights and range-bin choices use radar-only phase/power criteria; ECG is used after signal construction.",
+    "IBI truncated metrics align arrays by order and are preliminary; matched beat timing uses a bounded evaluation-only offset search.",
+    "No complex coherent fusion was run."
+  ]
+}

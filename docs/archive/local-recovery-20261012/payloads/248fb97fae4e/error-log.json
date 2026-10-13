@@ -1,0 +1,217 @@
+[
+  {
+    "id": 1,
+    "date": "2026-08-22",
+    "command": "python scripts/analyze_formal_behavior.py",
+    "error_type": "encoding",
+    "error_message": "UnicodeEncodeError: gbk codec cannot encode character in console output",
+    "fix_applied": "added UTF-8-safe stdout/stderr configuration and reran successfully",
+    "is_systemic": true
+  },
+  {
+    "id": 2,
+    "date": "2026-08-22",
+    "command": "python scripts/analyze_formal_cross_subject.py",
+    "error_type": "encoding",
+    "error_message": "UnicodeEncodeError: gbk codec cannot encode Unicode minus sign in console output",
+    "fix_applied": "added UTF-8-safe stdout/stderr configuration and reran successfully",
+    "is_systemic": true
+  },
+  {
+    "id": 3,
+    "date": "2026-08-22",
+    "command": "python scripts/analyze_formal_probe_centric.py",
+    "error_type": "path_wrong",
+    "error_message": "ZeroDivisionError after no probes were loaded from the configured formal data root",
+    "fix_applied": "corrected DATA_ROOT to D:\\正式实验, added empty-input guard, and reran 180 probes successfully",
+    "is_systemic": true
+  },
+  {
+    "id": 4,
+    "date": "2026-08-24",
+    "command": ".venv\\Scripts\\python.exe -m py_compile scripts\\evaluate_j_multimodal_loso.py",
+    "error_type": "runtime_path_stale",
+    "error_message": "Project virtual environment launcher points to missing D:\\Program Files\\PsychoPy\\python.exe",
+    "fix_applied": "used the current bundled Codex Python runtime; compilation passed without rewriting the user virtual environment",
+    "is_systemic": false
+  },
+  {
+    "id": 5,
+    "date": "2026-08-24",
+    "command": "bundled Codex Python scripts\\evaluate_j_multimodal_loso.py --bootstrap 1000",
+    "error_type": "missing_dependency",
+    "error_message": "ModuleNotFoundError: No module named 'sklearn'",
+    "fix_applied": "located C:\\Users\\550ACW\\AppData\\Local\\Programs\\Python\\Python314\\python.exe with scikit-learn 1.9.0",
+    "is_systemic": false
+  },
+  {
+    "id": 6,
+    "date": "2026-08-24",
+    "command": "Python314 scripts\\evaluate_j_multimodal_loso.py --bootstrap 1000",
+    "error_type": "unknown",
+    "error_message": "Manual KeyboardInterrupt during repeated pandas DataFrame concatenation in subject bootstrap",
+    "fix_applied": "replaced DataFrame concatenation with NumPy subject-index resampling; Python314 compilation passed",
+    "is_systemic": true
+  },
+  {
+    "id": 7,
+    "date": "2026-08-24",
+    "command": "Python314 scripts\\evaluate_j_multimodal_loso.py --bootstrap 1000 (second run)",
+    "error_type": "unknown",
+    "error_message": "Manual KeyboardInterrupt during repeated 200-tree random-forest LOSO fitting",
+    "fix_applied": "added selectable models/feature sets, reduced forest size to 80 trees, and added per-result checkpoints with progress output; compilation passed",
+    "is_systemic": true
+  },
+  {
+    "id": 8,
+    "date": "2026-08-24",
+    "command": "Python314 inline integrity check for J_Data_MULTIMODAL_v1 outputs",
+    "error_type": "verification_schema_mismatch",
+    "error_message": "KeyError: y_prob; loso_predictions.csv stores predicted probability in the score column",
+    "fix_applied": "inspected both prediction schemas and changed the integrity assertion from y_prob to score; analysis outputs were not affected",
+    "is_systemic": false
+  },
+  {
+    "id": 9,
+    "date": "2026-08-24",
+    "command": "Python314 inline integrity check for J_Data_MULTIMODAL_v1 outputs (second schema pass)",
+    "error_type": "verification_schema_mismatch",
+    "error_message": "AttributeError: multimodal_probe_matrix.csv uses subject rather than subject_id",
+    "fix_applied": "inspected the matrix schema and changed the subject-count assertion to the subject column; analysis outputs were not affected",
+    "is_systemic": false
+  },
+  {
+    "id": 10,
+    "date": "2026-08-24",
+    "command": "Python314 build_evaluate_j_mmwave_m1_loso.py --subjects 056 --extract-only",
+    "error_type": "runtime_api_compatibility",
+    "error_message": "AttributeError: module 'numpy' has no attribute 'trapz' during raw-phase spectral band-power integration.",
+    "fix_applied": "Replaced removed NumPy API with scipy.integrate.trapezoid; no raw data or previous outputs were modified.",
+    "is_systemic": true
+  },
+  {
+    "id": 11,
+    "date": "2026-08-24",
+    "command": "Python314 inline M1/Q0 representative-matrix descriptive check",
+    "error_type": "verification_syntax",
+    "error_message": "SyntaxError caused by a malformed nested list expression in a one-line inspection command.",
+    "fix_applied": "Corrected the inspection expression and reran; analysis files were not affected.",
+    "is_systemic": false
+  },
+  {
+    "id": 12,
+    "date": "2026-08-24",
+    "command": "M1/Q0 sub-056 representative diagnostic review",
+    "error_type": "timestamp_irregularity",
+    "error_message": "Using the median inter-frame interval gave a 142.9 Hz spectral grid although the selected data span was 30 s; representative plots therefore displayed about 22 s.",
+    "fix_applied": "Feature extractor now uses elapsed-window effective sampling rate and linearly resamples raw phase/magnitude to an equal-duration grid before spectral and dynamic features. Q0 continues to retain the timestamp-gap fraction.",
+    "is_systemic": true
+  },
+  {
+    "id": 13,
+    "date": "2026-08-24",
+    "command": "Python314 build_evaluate_j_mmwave_m1_loso.py --reuse-matrix --bootstrap 20",
+    "error_type": "feature_matrix_schema_gap",
+    "error_message": "KeyError: prior_n_err. The trusted-probe summary CSV lacks this B0 variable, which is stored in the frozen per-subject full_windows JSON used by the prior LOSO baseline.",
+    "fix_applied": "Added deterministic read-only join from J_Data_SUB*_FULL/sub*_full_windows.json keyed by subject and probe_id; the precomputed raw M1/Q0 columns were reused unchanged.",
+    "is_systemic": false
+  },
+  {
+    "id": 14,
+    "date": "2026-08-24",
+    "command": "Python inline read-only Zotero schema query",
+    "error_type": "verification_syntax",
+    "error_message": "SyntaxError caused by PowerShell and Python quote nesting in a one-line sqlite3 query.",
+    "fix_applied": "Switched to passing the Python query through standard input; Zotero database remained read-only and unchanged.",
+    "is_systemic": false
+  },
+  {
+    "id": 15,
+    "date": "2026-08-24",
+    "command": "python -c import bioread",
+    "error_type": "package_missing",
+    "error_message": "ModuleNotFoundError: No module named 'bioread' in Python314.",
+    "fix_applied": "No package installation performed; reused existing ACQ reference outputs and audited their provenance.",
+    "is_systemic": true
+  },
+  {
+    "id": 16,
+    "date": "2026-08-24",
+    "command": "G:\\Program Files (x86)\\python.exe -c import bioread",
+    "error_type": "package_missing",
+    "error_message": "ModuleNotFoundError: No module named 'bioread' in the G-drive Python environment.",
+    "fix_applied": "No package installation performed; avoided changing the environment used by the running NIR process.",
+    "is_systemic": true
+  },
+  {
+    "id": 17,
+    "date": "2026-08-24",
+    "command": "08_算法\\.venv_nir_gpu\\Scripts\\python.exe -c import bioread",
+    "error_type": "package_missing",
+    "error_message": "ModuleNotFoundError: No module named 'bioread' in the NIR virtual environment.",
+    "fix_applied": "No package installation performed; current task only used existing validated outputs.",
+    "is_systemic": true
+  },
+  {
+    "id": 18,
+    "date": "2026-08-24",
+    "command": "PowerShell output-directory inventory loop",
+    "error_type": "syntax_error",
+    "error_message": "ParserError: An empty pipe element is not allowed.",
+    "fix_applied": "Replaced the inline foreach pipeline pattern with an explicit result array and a separate Format-Table statement; no file move had started.",
+    "is_systemic": false
+  },
+  {
+    "id": 19,
+    "date": "2026-08-24",
+    "command": "PowerShell questionnaire distribution field filter",
+    "error_type": "schema_mismatch",
+    "error_message": "Select-Object could not find property 'variable'; the existing CSV uses the header 'field'.",
+    "fix_applied": "Stopped after the first failed query and inspected the CSV header. Subsequent read-only processing must use field/site/response_category/n/denominator_valid_nonmissing/percent.",
+    "is_systemic": false
+  },
+  {
+    "id": 20,
+    "date": "2026-08-24",
+    "command": "pair_goldclean_reference_with_mmwave_v1.py initial spectral summary",
+    "error_type": "nonfinite_numeric_handling",
+    "error_message": "Historical spectral output contains NaN values; the first metrics function treated NaN as a finite error, producing NaN MAE.",
+    "fix_applied": "number() and metrics() now retain only finite values before calculating MAE, bias, and within-5-bpm counts; source rows remain preserved.",
+    "is_systemic": false
+  },
+  {
+    "id": 21,
+    "date": "2026-08-31",
+    "command": "build_rgb_probe_features_20260831.py schema inspection (inline python -c)",
+    "error_type": "syntax_error",
+    "error_message": "SyntaxError: unterminated string literal from a Windows backslash split path in inline python code.",
+    "fix_applied": "Replaced manual path string splitting with os.path.basename in the inspection one-liner; no data was written.",
+    "is_systemic": false
+  },
+  {
+    "id": 22,
+    "date": "2026-08-31",
+    "command": "build_rgb_probe_features_20260831.py read of sub-041_blink_candidate_frames.parquet",
+    "error_type": "corrupt_input_file",
+    "error_message": "pyarrow ArrowInvalid: Parquet magic bytes not found in footer. sub-041 blink_candidate_frames.parquet is corrupted and 5 sessions (041/068/128/168/173) lack blink_candidate_events.parquet.",
+    "fix_applied": "Script now degrades per-track: blink features become NaN (partial_no_blink status) while motion/pose/brightness features are kept; missing rows are preserved, not zero-filled. Defects listed in build_rgb_probe_features_20260831.md.",
+    "is_systemic": false
+  },
+  {
+    "id": 23,
+    "date": "2026-08-31",
+    "command": "multimodal_fusion_analysis.py development + full run",
+    "error_type": "dev_errors_resolved_full_run_clean",
+    "error_message": "Development-phase errors during fusion implementation: pandas merge column-name collision on RGB Q1/Q2 label audit (KeyError q1_nominal_4class, fixed by renaming other-table label column before merge); sklearn 1.9 removed LogisticRegression(multi_class=...) and log_loss(eps=...) (TypeError, fixed by removing both kwargs); record missing model key in fold records (KeyError model, fixed). All resolved; full 61-fold run completed with 0 model failures and PASS_ALIGNMENT_AUDIT.",
+    "fix_applied": "See commit 0fc1137 (feat(fusion): eight-combination LOSO multimodal fusion analysis); six contract tests green."
+  },
+  {
+    "id": 24,
+    "date": "2026-08-31",
+    "command": "run_mmwave_pre30s_selector_hr_20260831.py read-only verification of session 97794 (inline python, no writes)",
+    "error_type": "data_naming_mismatch_expected",
+    "error_message": "FileNotFoundError: D:\\acq_mmwave_data\\sub-97994_\\mmwave\\sub-97794_mmwave_timestamps.csv not found. Session 97794's directory name AND internal beh/mmwave file prefixes all use 97994 (sub-97994_Block*_beh.csv, sub-97994_mmwave_*); only the acq filename is correct (97794.acq). Detected during read-only verification, not a runtime crash of the final run.",
+    "fix_applied": "Added ACQ_FILE_OVERRIDES (97795 -> 97995.acq, misspelled acq) and FILE_KEY_OVERRIDES (97794 -> 97994) to run_mmwave_pre30s_selector_hr_20260831.py; target-module loads use file key 97994 while output rows keep subject label 97794. Session 97792 additionally skipped as not_estimable (beh has no Block CSV, events.csv has baseline segment only).",
+    "is_systemic": false
+  }
+]

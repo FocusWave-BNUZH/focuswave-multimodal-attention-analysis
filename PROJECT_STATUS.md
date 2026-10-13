@@ -423,3 +423,6 @@ producer worktree 仍然保留。
 - 最终分类：`GAP_SOURCE_CLASSIFICATION=TIMESTAMP_RECORDING_ARTIFACT`；`GAP_EFFECT_ON_HR=UNRESOLVED`（无 clean no-gap comparator）；`FIXED_FS_WITH_GAPS=QUESTIONABLE`。HR/BR 继续 `HOLD`，HRV `BLOCKED`，Issue #16 `PAUSED`；未修改 FocusWave producer/raw/firmware、portable V2、C2B/C2C 或全量 batch。
 - 证据包新增 `MMWAVE_LONG_FRAME_INTERVAL_EVENTS.csv`、`MMWAVE_WINDOW_GAP_BURDEN.csv`、`MMWAVE_GAP_BURDEN_CORRELATION.csv`、`MMWAVE_ACQUISITION_TIMESTAMP_SOURCE_AUDIT.md`、`MMWAVE_LONG_INTERVAL_AUDIT_REPORT_2026-08-30.md`、`MMWAVE_LONG_INTERVAL_AUDIT_MANIFEST.json` 和 `scripts/maintenance/run_mmwave_long_interval_source_audit_20260830.py`。
 
+## 2026-10-13｜FW-GIT-REMOTE-TIDY-20261013 历史源码归档与分支收尾
+
+252份独有便携源码/过程快照收录于 `docs/archive/local-recovery-20261012`；当前科学代码、配置、结果与执行入口不变。已完成分支按主线历史恢复，三条被替代历史线按固定版本标签保留；未完成审阅、问题33、在用历史报告线和master回退基线保留。分支详情见 `docs/repository/BRANCH_RETIREMENT_EXECUTION_V3.md`，本轮不运行研究分析。

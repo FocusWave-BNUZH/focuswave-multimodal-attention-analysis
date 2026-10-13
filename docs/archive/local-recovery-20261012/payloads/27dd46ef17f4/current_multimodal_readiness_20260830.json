@@ -1,0 +1,34 @@
+{
+  "schema_version": "focuswave-multimodal-readiness-v1",
+  "analysis_role": "central_inference",
+  "matched_cohort": {
+    "frozen": false,
+    "cohort_id": "beijing_behavior_anchor_only",
+    "evidence": "docs/results/final_merge_readiness_20260829/FINAL_MERGE_READINESS_20260829.md"
+  },
+  "folds": {
+    "frozen": false,
+    "group_key": "repeat_participant_id",
+    "evidence": "docs/results/final_report_cohort_baseline_v2/REPORT_FOLDS_V1.csv"
+  },
+  "producers": {
+    "mmwave": {
+      "status": "preliminary_screening_only",
+      "formal_ready": false,
+      "quality_semantics_frozen": false,
+      "feature_contract": "current formal mmWave preliminary screening only"
+    },
+    "nir": {
+      "status": "participant_identity_blocked",
+      "formal_ready": false,
+      "quality_semantics_frozen": false,
+      "feature_contract": "current NIR integration readiness package"
+    },
+    "rgb": {
+      "status": "engineering_only",
+      "formal_ready": false,
+      "quality_semantics_frozen": false,
+      "feature_contract": "current RGB raw/context and motion/QC package"
+    }
+  }
+}

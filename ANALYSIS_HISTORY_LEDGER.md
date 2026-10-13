@@ -913,3 +913,7 @@ Behavior+mmWave 增量已经做过，不重跑：
 **证据**：报告/aggregate 位于 `docs/results/2026-09-12_MMWAVE_BASELINE_PERSONALIZATION_AUDIT/`；逐 session 116 rows、逐窗 654 rows 与全输入 hash local-only 位于 `D:\Project\厚粲杯\11_数据\_FormalAnalysis\mmWave\mmwave_baseline_personalization_audit_20260912\`。入口为 `scripts/maintenance/audit_mmwave_baseline_personalization_20260912.py` 与 `summarize_mmwave_baseline_personalization_audit_20260912.py`。
 
 ---
+
+## 2026-10-13｜FW-GIT-REMOTE-TIDY-20261013 历史源码归档与分支收尾
+
+252份独有便携源码/过程快照收录于 `docs/archive/local-recovery-20261012`；当前科学代码、配置、结果与执行入口不变。已完成分支按主线历史恢复，三条被替代历史线按固定版本标签保留；未完成审阅、问题33、在用历史报告线和master回退基线保留。分支详情见 `docs/repository/BRANCH_RETIREMENT_EXECUTION_V3.md`，本轮不运行研究分析。

@@ -1,0 +1,5 @@
+{
+  "status": "BLOCKED",
+  "schema_version": "focuswave-multimodal-ai-prototype-v1",
+  "reason": "matched cohort is not frozen; participant-level folds are not frozen; mmwave producer is not formal-ready (status='preliminary_screening_only'); mmwave quality semantics are not frozen; mmwave readiness contains preliminary/engineering/proxy wording; nir producer is not formal-ready (status='participant_identity_blocked'); nir quality semantics are not frozen; rgb producer is not formal-ready (status='engineering_only'); rgb quality semantics are not frozen; rgb readiness contains preliminary/engineering/proxy wording"
+}

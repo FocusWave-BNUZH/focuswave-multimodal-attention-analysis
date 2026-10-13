@@ -1,0 +1,22 @@
+{
+  "schema_version": "focuswave-multimodal-ai-prototype-v1",
+  "primary_model": "quality_gated_fusion",
+  "comparators": ["context_logistic", "concat_logistic", "concat_mlp"],
+  "outer_validation": "frozen participant-disjoint folds",
+  "preprocessing": "median imputation and standardization fit within each training fold",
+  "logistic": {"C": 1.0, "solver": "liblinear", "max_iter": 2000},
+  "mlp": {"hidden_layer_sizes": [16], "alpha": 0.001, "max_iter": 1000},
+  "gate": {
+    "type": "softmax quality-aware late fusion",
+    "experts": ["context", "mmwave", "nir", "rgb"],
+    "quality_inputs": ["availability * producer_quality"],
+    "regularization": 0.001
+  },
+  "evaluation_ablations": [
+    "all_available",
+    "missing_mmwave",
+    "missing_nir",
+    "missing_rgb"
+  ],
+  "status": "prototype_only; do not use until producer readiness manifest passes"
+}

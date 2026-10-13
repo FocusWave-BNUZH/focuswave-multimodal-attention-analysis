@@ -1,0 +1,1271 @@
+{
+  "files": 252,
+  "all_byte_identical": true,
+  "checks": [
+    {
+      "file": "payloads/00950bcca336/MMWAVE_FRAME_TIME_CONTRACT_2026-08-30.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/7ee309a8d91b/plot_mmwave_method_3panel_20260831.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/813b7e7ce462/run_mmwave_beat_level_validation_20260830.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/51b05b23d80c/run_mmwave_estimator_same_window_audit_20260830.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/2cc0ac40de06/run_mmwave_gate_target_ablation_20260830.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/2623b79cbfe0/run_mmwave_pre30s_selector_hr_20260831.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/19739381056b/run_mmwave_probe_merge_ready_20260831.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/dd777f61fe12/run_mmwave_probe_merge_ready_E_20260831.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/a9f2fc4a5edf/run_mmwave_targeted_validation_20260830.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/a51f4c8e024c/run_mmwave_window_length_comparison_20260830.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/de7cd1eed758/process_vital_signs_v3_1_1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/4f5ce244a16f/test_mmwave_dll_host_time_cutover.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/395a087a80e1/summarize_mmwave_hr_recovery_p1_20260912.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/d31504d5d3d3/test_mmwave_hr_recovery_p1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/9427e40c0eea/test_mmwave_pre30s_dll_cutover.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/9416fb1e1533/NIR_FORMAL_DETACHED_RUN.ps1",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/b582165a6f78/NIR_QUEUE_MONITOR.ps1",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/bfe41bbe79b9/README.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/4a8d328238a2/vision_provenance.example.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/c2dc1305462f/本地云端同步规范_v1.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/fb4f77c24135/算法库根层残留与冻结边界_20260825.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/82981cb274a6/算法库目录与命名规范_v1.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/64486caec511/输出迁移记录_2026-08-24_第1批.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/ac35b73ef257/输出迁移记录_2026-08-24_第2批.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/606371ea47ce/输出迁移记录_2026-08-24_第3批.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/1c00f072fb62/WORKSPACE_LEDGER.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/73e18b6cfb54/C1_C2A_HANDOFF_2026-08-26.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/61d664f41f35/2026-08-24_J_Data_NIR教师信号第一阶段审计报告.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/4aa37d7cb6ad/2026-08-24_J_Data毫米波警觉度探针事件分析核查报告.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/c7e43e6f698d/C1C_PILOT_REPORT.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/e5ebb3c9d779/C1D_PILOT_REPORT.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/2d9e31df2836/c1d_decision.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/02225fa49061/FINAL_MERGE_READINESS_20260829.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/b0891283c66a/recommended_analysis_plan_for_morning.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/734861b7f2ab/HR_COURSE_CORRECTED_REPORT_SYNC.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/5974f3137495/MMWAVE_ALGORITHM_AND_RANGE_GATE_AUDIT_V1.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/b2ee64332f4c/MMWAVE_FORMAL_VITAL_QC_V1.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/c727910af295/MMWAVE_FORMAL_VITAL_QC_V1_CORRECTED37MM.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/fe8b9fcb1ddf/RGB_CURRENT_STATUS_V1.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/0f87df988c3c/0827报告v1_提取.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/cfdac4579021/0827报告v1_提取v2.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/a998f311a1ce/calibrate_ecg_mmwave.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/70a05e7d7b5a/validate_gold_anchor.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/8de7a6104abe/优化决策记录.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/c63cfa423fb6/信号处理算法文献.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/9df38e84b565/毫米波数据Q&A.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/ef3e833b184d/脚本索引.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/a9c5e7a8e101/ADC固件实测报告_0812.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/e4dcce0ce096/毫米波ECG双机校准_结果与决策_0815.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/eae4869ac1c8/行为生理重跑结果解读_0814.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/db13834ee6d4/摄像头毫米波融合门控方案.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/6f5cdb901be9/正式实验设计建议.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/c7f58d18a0fc/最终交付审计报告_100人目标.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/11363751035c/毫米波专注系统_运行手册.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/d3bf1e4137a7/README_毫米波专注系统.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/248fb97fae4e/error-log.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/651c223b8b9a/数据分析路线图.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/e7d21188b318/数据采集与验收清单_100人目标.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/940bf24995e4/README.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/500d646cd2bd/run_mmwave_probe_criterion_models_20260831.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/8573385872f6/analyze_EData_batch.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/916e8d68bd28/analyze_acq_reference.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/9cc22b1009b8/analyze_formal_behavior.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/784ec327dbe1/analyze_formal_block_level.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/0e0c20f4b506/analyze_formal_cross_subject.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/7539651123d2/analyze_formal_event_related.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/46b7d4c02140/analyze_formal_probe_centric.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/e8143fcb9c58/analyze_formal_vigilance.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/c25a4fe41e88/analyze_rest_3min.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/54cd70c241fa/audit_100_subject_target.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/ef4ca48d6cca/audit_acq_signal_quality.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/9fef03a51dc8/audit_behavior_outcomes.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/f5a03b98488f/audit_c2a_dataset.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/42f264e9711b/audit_crossmodal_time_gate.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/71d5e77232ac/audit_label_coverage.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/dbad57ed1f22/audit_project_completion.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/28be38a4f264/audit_source_evidence.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/3e36b96477e7/audit_source_inventory.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/2a0e0d7496d9/build_acq_reference_validation_report.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/cae58f010098/build_evaluate_j_mmwave_m1_loso.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/e856773f531c/build_mmwave_quality_report.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/325971dd8905/build_system_mode_policy.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/aeb678ff7f33/calibrate_ecg_mmwave.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/6e0ac90ef6c5/calibrate_vmd_segments.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/a8cb5e0f2ede/compare_a2_ecg_mae.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/1c2d891d7d0f/compare_mmwave_reference.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/afcb22e5cc5e/evaluate_acq_breath_methods.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/476651985cda/evaluate_breath_harmonic_correction.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/8edf73a3ca61/evaluate_formal_attention_lopo.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/dd844e1219fa/evaluate_hrv_peak_gating.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/742267a2d75f/evaluate_j_multimodal_loso.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/09ae8af87db1/evaluate_mmwave_behavior_criterion.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/e97c3a2b26e6/evaluate_mmwave_behavior_fusion.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/4b602511d3f5/evaluate_personalized_temporal.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/bc303f6a2944/evaluate_raw_motion_features.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/eaacce99decd/evaluate_rich_focus_features.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/6a2e25223047/evaluate_runtime_focus_system.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/bb4fac6d5e77/evaluate_within_subject_focus.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/6f55d8b26e80/export_rsp_rates.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/e24c3c42961e/fit_personalized_calibration.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/1f172f01b2b4/gold_standard_qa.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/6a4f4d889ea8/audit_nir_resolution_sensitivity.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/f893e541a9cc/finalize_audit_report.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/35fd9f11e662/audit_acq_signal_quality.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/983bcfa17322/build_acq_reference_validation_report.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/d6cfccca8413/build_mmwave_quality_report.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/688fdf21412f/evaluate_hrv_peak_gating.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/9df18aa3d9d4/build_issue17_report_ready_matrix.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/6ff0fcad3720/README.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/7682879a2379/_cal_segment_test.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/4c0ab72c58b5/_diag_br.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/9e8cf44d36de/_prepare_plot_data.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/40ebf2568f0c/_verify_rest1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/dddd72f70ee3/_摸底_正式行为.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/7508b2da1352/_查静息vs任务HR.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/66287ffbdb37/e5_datacube_probe_20260831.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/e8f1f2afc546/e5_range_profile_survey_20260831.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/29394d75c11d/B2_extreme_range_target_audit_20260829.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/b7ec5e802081/audit_output_contents_20260828.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/42417c2ae9be/audit_repository_layout.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/8ec892a7c94b/build_formal_vital_qc_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/f3ddd3a66f8b/build_hr_course_99_audit.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/cdfa0942be17/build_merge_readiness_20260829.ps1",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/171dc9e0e392/build_mmwave_algorithm_range_gate_audit_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/d3e68cf061e4/rebuild_readiness_matrices_20260829.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/aba1cb10efed/relabel_mmwave_readiness_flags_20260829.ps1",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/b2a7890e3b1e/run_hr_course_99_corrected.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/6bb3d9b70b29/make_EData_summary.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/0b4dc8a4d348/mmwave_focus_system.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/00a4d6e8d5bd/plot_formal_all.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/3d389bc21577/plot_formal_behavior.R",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/00efa6d15aa1/plot_formal_physio.R",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/d4d92ffd24eb/plot_formal_vigilance.R",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/8ee1a5330db8/prototype_attention_model.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/c66ab883b0b2/repair_c1_alignment_protocol.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/8968da96791f/replay_c1c_assets.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/6b3df47b9e08/run_c1c_mmhrv_pilot.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/6b4b64042f46/run_c1d_radarbeat_backend_pilot.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/0a7379f29050/run_c2b_task_focus_baselines.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/f9c70a414d3f/run_e_data_batch_fast.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/fe70f1bb7a16/run_rsp_gate.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/cbb48a073e85/run_timeline_gated_mmwave_quality.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/d46f44f53dfc/scan_new_batch_quality.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/1e07b7c73cab/scan_timeline_gated_quality.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/70c8f45e1acd/summarize_formal_fast.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/baa5956c61a6/update_focuswave_pipeline.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/4ad21244033e/validate_external_agebalanced.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/fc4aa53b9d5d/validate_gold_anchor.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/5a5122d0d31a/verify_system_release.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/cba251755b61/RS6240_正式固件源码路径审计_20260825.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/54d4da97d746/CHANGELOG.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/e9adf47d5a2b/multimodal_ai_prototype_v1.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/883d573de800/MULTIMODAL_AI_PROTOTYPE_IMPLEMENTATION_2026-08-30.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/f2322f7b7310/README.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/90c1573b63cb/run_quality_aware_fusion_prototype.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/75ef3e4879d7/multimodal_ai_feature_matrix_v1.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/fccfab044f7a/test_multimodal_ai_prototype.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/a83b09f33311/build_formal_vital_qc_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/4ee85c0e14f4/mmwave_probe_availability_v1.schema.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/31583b6bd9cc/mmwave_probe_feature_lane_v1.schema.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/4250f75903b4/test_mmwave_probe_adapter_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/5f0735a9338e/run_mmwave_low_bias_mechanism_audit_20260913.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/dbf771cb80f9/MMWAVE_B3_BEAT_IBI_DLL_TIME_REPORT_20260912.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/84616ebd473d/run_mmwave_beat_level_validation_20260830.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/f1ab146ef85b/run_mmwave_beat_level_validation_20260831_expanded.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/aca08a078a8f/test_mmwave_dll_host_time_cutover.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/96f560e4c226/run_mmwave_pre30s_selector_hr_20260831.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/2c28af84a4c8/MMWAVE_METHOD_3PANEL_2026-08-31.svg",
+      "byte_identical": true,
+      "syntax": "xml_parse_pass"
+    },
+    {
+      "file": "payloads/a81ecbdcdba0/plot_mmwave_method_3panel_20260831.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/620f4bb17b27/FIGURE_ATLAS.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/87ac52103f8e/FOCUSWAVE_FRONTEND_PIPELINE_AUDIT.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/1e25758cf532/INDUSTRY_VS_FOCUSWAVE_FRONTEND_GAP_SUMMARY.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/bd831d39084e/LITERATURE_METHOD_MAP.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/d57f7488f324/MMWAVE_FIGURE_STANDARD.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/fb522d2357ba/cal_sub2_part001_frontend_audit.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/595609f60b3b/generate_frontend_diagnostic.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/03e9ff611ea4/MAINLINE_C_STATUS_V1.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/26047862a40a/README.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/bba7b453af4e/README.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/d1c280c73edd/PSYCHOMETRIC_VALIDITY_RELIABILITY_EVIDENCE_MATRIX_V1.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/fa1afd005d86/build_psychometric_evidence_matrix_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/256a44e30b20/compare_mmwave_probe_versions.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/8bca676fea08/mmwave_frozen_cohort.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/af955438ed2a/run_mmwave_probe_merge_ready_20260831.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/97d8de0cd86f/test_dll_timestamp_cutover.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/283ec4f5760e/test_issue33_probe_contract.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/1d51060cdc6b/项目级进度与时空状态地图_20260829.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/cc3490adc4ca/RS6240_ECG评估器与timestamp-aware coherence复核_20260825.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/d6f63f8c8e28/RS6240_ECG跨场次验证_供Sol审阅_20260825.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/053c050af141/RS6240_Sol审阅问题清单_20260825.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/670d7b55bf71/audit_rs6240_timestamp_coherence_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/7c18796cca78/evaluate_rs6240_ecg_cross_session_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/df1fe42cb05c/evaluate_rs6240_multichannel_ecg_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/61212f3af777/rs6240_ecg_evaluator_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/e2de38ffdcc3/RS6240_正式采集固件参数与多通道融合验证计划_20260825.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/fff9cf77beae/CHANGELOG.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/91de34c10d0f/RESULT_INDEX_V1.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/95a73142d8ca/MMWAVE_COARSE_PHYSICAL_ROI_CONTRACT_2026-08-30.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/883a052bb255/MMWAVE_HR_BR_TEMPORAL_CONTRACT_CANDIDATE_2026-08-30.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/fc5574860e13/CHANGELOG.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/450c42ab8e9b/MMWAVE_CANONICAL_STATE_AND_INTERFACE_V1.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/f0c381e0d5fd/RESULT_INDEX_V1.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/0ffea163e37b/MMWAVE_PROBE_ADAPTER_T7_AGGREGATE.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/2304f6be220e/README.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/6af1c48b2dbd/mmwave_probe_merge_ready_v1.schema.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/f883e71810ff/build_mmwave_probe_adapter_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/9e715080ae7e/test_mmwave_probe_adapter_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/0ae17cf871f2/2026-08-26-c1-alignment-protocol-repair-decision.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/62a22054febb/C1_ALIGNMENT_PROTOCOL_REPAIR.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/62d1a5b4cc57/c1_alignment_protocol_repair_summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/12596ba6aef9/c1_device_sync_audit.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/ef411d2c6f51/2026-08-26-c1-alignment-robustness-audit.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/d55090473883/2026-08-26-c2b-v2-canonical-baselines.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/aea603bc8db1/WORKSPACE_LEDGER.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/980036e0b588/C2B_BASELINE_REPORT.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/3f8043685a6c/WORKSPACE_LEDGER.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/ef9da3c7ba94/C2A_DATASET_AUDIT.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/59e5a6e49c6d/WORKSPACE_LEDGER.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/0a01dbb3e3ce/C2C_PERSONALIZED_MMWAVE_CALIBRATION_REPORT.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/ccae88e7f364/D1_BEIJING_ZHUHAI_CANONICAL_HARMONIZATION_20260826.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/fcd65458a95e/run_d1_beijing_zhuhai_canonical_harmonization.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/bcb080b0870a/FINAL_BEHAVIOR_CONTEXT_BASELINE_RESULT.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/d19cf5990114/run_final_behavior_context_baseline_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/47f3bbb1c6f1/FINAL_BEHAVIOR_CONTEXT_BASELINE_V2.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/0ed9478f82ad/REPORT_FOLDS_V1.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/2293df5861db/REPORT_REPEAT_SESSION_EFFECTS_RESULT.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/106eac6a1f6d/README.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/86efa6135899/inspect_sample.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/46b933c25c5a/metadata_sanitized.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/b7aa30003d28/build_formal_mmwave_sample_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/5cdca2b68ce3/audit_rs6240_high_range_bins_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/6b1ad10a50be/evaluate_rs6240_phase_fusion.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/26fd0eac087b/evaluate_rs6240_phase_fusion_cross_session_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/93680f21472e/evaluate_rs6240_phase_fusion_power_gate_sensitivity_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/644e9b0cd6a8/evaluate_rs6240_phase_fusion_range_gate_sensitivity_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/a415d7a9403a/evaluate_rs6240_power_gate_vs_frozen_s1_v1.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/071be983c4e5/summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/5bd6c57ff9e3/fusion_ecg_summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/1f71905d5777/summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/a4536f3eb043/summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/e5ec3f4a44c2/rs6240_pr1_channel_audit.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/e7dd6d3304cb/audit_summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/27dd46ef17f4/current_multimodal_readiness_20260830.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/25e084493162/gate_report.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/924f5c5e727d/issue12_nir_ladder_20260827.py",
+      "byte_identical": true,
+      "syntax": "python_ast_pass"
+    },
+    {
+      "file": "payloads/7947bc770076/summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/04b3fe723ff9/fusion_ecg_summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/bf5341bee4e1/audit_summary.json",
+      "byte_identical": true,
+      "syntax": "json_parse_pass"
+    },
+    {
+      "file": "payloads/2010a1dce49e/d1_beijing_zhuhai_canonical_fields.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/81cff05d6fe9/D1_BEIJING_ZHUHAI_CANONICAL_HARMONIZATION_20260826.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/9c430dd57537/2026-08-26-beijing-zhuhai-protocol-identity-harmonization.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    },
+    {
+      "file": "payloads/ac26580df302/2026-08-26-beijing-zhuhai-protocol-identity-harmonization.md",
+      "byte_identical": true,
+      "syntax": "not_applicable"
+    }
+  ],
+  "not_claimed": [
+    "scientific revalidation",
+    "full runtime execution of historical sources",
+    "adoption into current pipeline"
+  ]
+}

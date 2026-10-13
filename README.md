@@ -86,3 +86,7 @@ tests/         schema/path/contract smoke checks
 所有可运行模块必须记录 `machine_role`、`runtime_backend`、`pipeline_version`、`git_commit`、`model_hash`、`config_hash`、`schema_version`、`source_manifest_hash`。缺少这些字段的历史结果只可作为 supporting/reference，并在报告中显式写出不可复现限制。
 
 正式治理入口：`docs/repository/CANONICAL_ENTRYPOINTS_V1.md`、`docs/repository/FINAL_REPOSITORY_TREE_V1.md` 和 `docs/repository/REPOSITORY_CUTOVER_PLAN_V1.md`。本仓库不上传原始数据、participant-level rows、NPZ/MAT/BIN/AVI、缓存或机器私有路径。
+
+## 2026-10-13 本机独有过程归档与分支整理
+
+[历史源码、过程原文及分支用途](docs/archive/local-recovery-20261012/README.md)：补录 252 份不同内容快照，存放在既有归档/运行记录体系内。历史实现不作为当前执行入口；原始数据、行级数据、模型和运行环境不纳入。默认分支保持 `main`，补录分支合入后移除，历史分支先保留固定版本再收尾。
