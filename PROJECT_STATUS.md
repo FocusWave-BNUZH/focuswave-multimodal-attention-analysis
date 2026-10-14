@@ -430,3 +430,7 @@ producer worktree 仍然保留。
 ## 2026-10-13｜FW-GIT-BRANCH-CONTENT-AUDIT-20261013 剩余分支逐内容核验
 
 中央8条与单模态7条分支已完成源码/配置/历史读取。四条8月行为分支是旧候选与基线；当前正式行为入口在单模态仓库的后续实现。q1属于旧报告与本机迁移现场，不作为当前报告权威；master已有精确旧基线标签。收敛目标与旧审阅/本地现场前置条件见 `docs/repository/REMAINING_BRANCH_CONTENT_AUDIT_20261013.md`，本轮未关闭审阅、删除分支或修改科学代码。
+
+## 2026-10-14｜FW-GIT-BRANCH-CONSOLIDATE-20261014 授权执行
+
+九条历史分支整树/精确提交已保留，包含q1旧报告最后28个提交；旧行为候选按历史关闭，不合并其实现。当前活动入口与回读见 `docs/repository/BRANCH_RETIREMENT_EXECUTION_V4.md`，本机迁移现场与科学代码/结果不动。

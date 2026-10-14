@@ -94,3 +94,7 @@ tests/         schema/path/contract smoke checks
 ## 2026-10-13 剩余分支逐内容核验
 
 [每条分支的现用关系、独有内容、历史版本与收尾条件](docs/repository/REMAINING_BRANCH_CONTENT_AUDIT_20261013.md)。本轮深入核验纠正仅按硬件名称/开放审阅作保留的粗略判断，现行代码与结果未改。
+
+## 2026-10-14 分支与历史版本入口
+
+[当前活动分支、完整历史版本及执行证据](docs/repository/BRANCH_RETIREMENT_EXECUTION_V4.md)。旧版本按精确固定版本恢复；本分支执行代码、模型和配置不变。
