@@ -16,8 +16,11 @@ time/frequency fusion）和 targeted_validation 的 block-local ECG affine 对�
 
 from __future__ import annotations
 
+import argparse
 import csv
+import hashlib
 import importlib.util
+import json
 from pathlib import Path
 
 import numpy as np
@@ -30,6 +33,9 @@ SUBJECTS = ("97793", "9779", "97795", "97792", "97796", "97794")
 FS = 100.0
 PRE_WINDOW_MS = 30_000
 COURSE_S = 25.0
+ALIGNMENT_TIMESTAMP_SOURCE = "dll_host_receive"
+ALIGNMENT_TIMESTAMP_COLUMN = 1
+PYTHON_PROCESS_TIMESTAMP_COLUMN = 2
 
 # ---- 场次命名坑映射（08-16 现场日志口径，08-31 扩样只读复核确认） ----
 # 97795：目录 sub-97795_ 正确，acq 文件名误写 97995.acq（目录内唯一 acq，glob 本可命中，显式映射更稳）。
@@ -69,6 +75,17 @@ def load_module(path: Path, name: str):
     return module
 
 
+def alignment_timestamps(timestamps: np.ndarray) -> np.ndarray:
+    """Return the formal DLL host-receive clock; never fall back to Python time."""
+    values = np.asarray(timestamps)
+    if values.ndim != 2 or values.shape[1] <= ALIGNMENT_TIMESTAMP_COLUMN:
+        raise ValueError("DLL host receive timestamp column is required")
+    result = values[:, ALIGNMENT_TIMESTAMP_COLUMN].astype(np.int64)
+    if len(result) == 0 or np.any(result <= 0) or np.any(np.diff(result) < 0):
+        raise ValueError("DLL host receive timestamps are invalid or nonmonotonic")
+    return result
+
+
 def selector_step(algo, heartbeat: np.ndarray, previous_bpm: float | None) -> dict:
     """完整 selector 链：time + harmonic fold + spectral + fusion（复用 producer 现有方法）。"""
     peaks = np.asarray(algo.detect_peaks_heart_lo(heartbeat, lo_bpm=algo.HR_LO_BPM, hi_bpm=algo.HR_HI_BPM), dtype=int)
@@ -99,6 +116,16 @@ def selector_step(algo, heartbeat: np.ndarray, previous_bpm: float | None) -> di
     next_previous = previous_bpm
     if fused is not None and (previous_bpm is None or confidence >= 0.12):
         next_previous = float(fused) if previous_bpm is None else 0.8 * float(previous_bpm) + 0.2 * float(fused)
+    # Audit the current producer course QC without changing the frozen B2 HR outputs.
+    course = algo.estimate_hr_time_course(
+        heartbeat=heartbeat,
+        peaks=peaks,
+        fs=FS,
+        reference_bpm=None,
+        window_s=COURSE_S,
+        step_s=5.0,
+    )
+    course_confidence = [float(point.get("confidence", 0.0)) for point in course.get("points", [])]
     return {
         "selector_bpm": selected,
         "selector_time_bpm": time_bpm,
@@ -107,6 +134,66 @@ def selector_step(algo, heartbeat: np.ndarray, previous_bpm: float | None) -> di
         "selector_confidence": confidence,
         "selector_next_previous_bpm": next_previous,
         "selector_n_peaks": int(len(peaks)),
+        "course_mean_confidence": float(np.mean(course_confidence)) if course_confidence else None,
+        "course_usable_ratio": course.get("signal_quality", {}).get("usable_ratio"),
+        "course_json": course,
+    }
+
+
+def restoration_step(algo, heartbeat: np.ndarray) -> dict:
+    """Run only the P0-approved existing downstream restoration bundle."""
+    peaks = np.asarray(
+        algo.detect_peaks_heart_lo(heartbeat, lo_bpm=algo.HR_LO_BPM, hi_bpm=algo.HR_HI_BPM),
+        dtype=int,
+    )
+    base_freq_hz = algo.estimate_freq_periodogram(heartbeat, algo.HR_LO_HZ, algo.HR_HI_HZ)
+    base_freq_bpm = round(float(base_freq_hz * 60.0), 1) if base_freq_hz is not None else None
+    global_time_bpm = round(float(60.0 * FS / np.mean(np.diff(peaks))), 1) if len(peaks) >= 2 else None
+
+    segment = algo._heart_segment_reference_correction(
+        heartbeat=heartbeat,
+        hp=peaks,
+        base_freq_bpm=base_freq_bpm,
+        ext_br_bpm=None,
+    )
+    periodogram_bpm = segment.get("corrected_freq_bpm", base_freq_bpm)
+    consensus_bpm, consensus_time_bpm, consensus = algo._heart_window_consensus_bpm(
+        seg_corr=segment,
+        hr_freq_bpm_periodogram=periodogram_bpm,
+        hr_time_bpm_global=global_time_bpm,
+    )
+    course = algo.estimate_hr_time_course(
+        heartbeat=heartbeat,
+        peaks=peaks,
+        fs=FS,
+        reference_bpm=consensus_bpm,
+        window_s=COURSE_S,
+        step_s=5.0,
+    )
+    quality = course.get("signal_quality", {})
+    gate_passed = bool(quality.get("hard_gate_passed", False))
+    pre_gate = {
+        "spectral_bpm": course.get("freq_median_bpm"),
+        "time_bpm": course.get("time_median_bpm"),
+        "fused_bpm": course.get("fused_median_bpm"),
+    }
+    confidence = [float(point.get("confidence", 0.0)) for point in course.get("points", [])]
+    return {
+        **{key: value if gate_passed else None for key, value in pre_gate.items()},
+        "pre_gate": pre_gate,
+        "confidence": float(np.mean(confidence)) if confidence else None,
+        "usable_ratio": quality.get("usable_ratio"),
+        "gate_hit": not gate_passed,
+        "gate_reason": None if gate_passed else "usable_ratio_below_0.50",
+        "status": "ESTIMATED" if gate_passed else "QC_FAIL_SIGNAL_QUALITY",
+        "reference_bpm": consensus_bpm,
+        "consensus_time_bpm": consensus_time_bpm,
+        "base_freq_bpm": base_freq_bpm,
+        "global_time_bpm": global_time_bpm,
+        "segment": segment,
+        "consensus": consensus,
+        "course": course,
+        "n_peaks": int(len(peaks)),
     }
 
 
@@ -127,7 +214,7 @@ def load_probe_onsets(subject: str) -> list[dict]:
     return probes
 
 
-def run_subject(algo, target, subject: str) -> list[dict]:
+def run_subject(algo, target, subject: str, arm: str) -> list[dict]:
     # 97794 的目录/文件前缀误用 97994，读文件时用文件主体 key；输出行 subject 保持 97794
     file_key = FILE_KEY_OVERRIDES.get(subject, subject)
     probes = load_probe_onsets(file_key)
@@ -159,8 +246,12 @@ def run_subject(algo, target, subject: str) -> list[dict]:
         win_end = onset
         if win_end - win_start < int(10 * 1000):
             continue
-        i0 = int(np.searchsorted(timestamps[:, 2], win_start, side="left"))
-        i1 = int(np.searchsorted(timestamps[:, 2], win_end, side="right"))
+        # Formal cutover: select radar frames by DLL host receive time in the
+        # right-open physiological interval [win_start, probe_onset).  The
+        # Python processing timestamp remains available only for QC elsewhere.
+        frame_time = alignment_timestamps(timestamps)
+        i0 = int(np.searchsorted(frame_time, win_start, side="left"))
+        i1 = int(np.searchsorted(frame_time, win_end, side="left"))
         if i1 - i0 < 200:
             continue
 
@@ -178,19 +269,27 @@ def run_subject(algo, target, subject: str) -> list[dict]:
         heartbeat = algo._sos_bandpass(disp, algo.HR_LO_HZ, algo.HR_HI_HZ)
 
         previous = previous_by_block.get(block_id)
-        step30 = selector_step(algo, heartbeat, previous)
+        step30 = selector_step(algo, heartbeat, previous) if arm == "control" else restoration_step(algo, heartbeat)
         n25 = int(COURSE_S * FS)
-        step25 = selector_step(algo, heartbeat[-n25:], previous) if len(heartbeat) >= n25 else None
+        step25 = selector_step(algo, heartbeat[-n25:], previous) if arm == "control" and len(heartbeat) >= n25 else None
 
         phi_br = np.unwrap(np.angle(iq_fd[:, br_bin, br_ch]))
         disp_br = algo.WAVELENGTH_MM * phi_br / (4 * np.pi)
         _, br_freq, _, _ = algo._select_breath_candidate(disp_br)
         br_bpm = br_freq * 60.0 if br_freq is not None else None
 
+        phi_hr = np.unwrap(np.angle(iq_fd[:, hr_bin, hr_ch]))
+        phase_stability, _ = algo._phase_stability_score(phi_hr)
+        motion_proxy = float(np.std(np.diff(disp))) if len(disp) > 1 else None
+        frame_ids = np.asarray(timestamps[i0:i1, 0], dtype="<i8")
+        frame_index_sha256 = hashlib.sha256(frame_ids.tobytes()).hexdigest().upper()
+        heartbeat_sha256 = hashlib.sha256(np.asarray(heartbeat, dtype="<f8").tobytes()).hexdigest().upper()
+
         ref = target.ecg_rsp_window(ecg, rsp, ecg_fs, ecg_i0, ecg_i1) if ecg_i0 is not None else {}
         ecg_hr = ref.get("ecg_hr_bpm")
 
         rows.append({
+            "arm": arm,
             "subject": subject,
             "block_id": block_id,
             "probe_onset_unix_ms": onset,
@@ -198,20 +297,59 @@ def run_subject(algo, target, subject: str) -> list[dict]:
             "win_end_unix_ms": win_end,
             "win_s": round((win_end - win_start) / 1000.0, 3),
             "mmwave_frames": i1 - i0,
+            "frame_i0": i0,
+            "frame_i1_exclusive": i1,
+            "frame_index_sha256": frame_index_sha256,
+            "heartbeat_sha256": heartbeat_sha256,
+            "alignment_timestamp_source": ALIGNMENT_TIMESTAMP_SOURCE,
+            "alignment_timestamp_column": ALIGNMENT_TIMESTAMP_COLUMN,
             "hr_bin": hr_bin,
             "hr_channel": hr_ch,
+            "hr_distance_proxy_m": round(float(hr_bin) * 0.037, 3),
+            "br_bin": br_bin,
+            "br_channel": br_ch,
             "ecg_hr_bpm": ecg_hr,
-            "hr_30s_fused_bpm": step30["selector_fused_bpm"],
+            "hr_30s_fused_bpm": step30["selector_fused_bpm"] if arm == "control" else step30["fused_bpm"],
             "hr_25s_fused_bpm": step25["selector_fused_bpm"] if step25 else None,
-            "hr_30s_spectral_bpm": step30["selector_bpm"],
+            "hr_30s_spectral_bpm": step30["selector_bpm"] if arm == "control" else step30["spectral_bpm"],
             "hr_25s_spectral_bpm": step25["selector_bpm"] if step25 else None,
-            "time_harmonic_folded_30s": step30["selector_time_harmonic_folded"],
+            "hr_30s_time_bpm": step30["selector_time_bpm"] if arm == "control" else step30["time_bpm"],
+            "hr_25s_time_bpm": step25["selector_time_bpm"] if step25 else None,
+            "time_harmonic_folded_30s": step30["selector_time_harmonic_folded"] if arm == "control" else None,
             "time_harmonic_folded_25s": step25["selector_time_harmonic_folded"] if step25 else None,
+            "hr_spectral_bpm_pre_gate": (
+                step30["selector_bpm"] if arm == "control" else step30["pre_gate"]["spectral_bpm"]
+            ),
+            "hr_time_bpm_pre_gate": (
+                step30["selector_time_bpm"] if arm == "control" else step30["pre_gate"]["time_bpm"]
+            ),
+            "hr_fused_bpm_pre_gate": (
+                step30["selector_fused_bpm"] if arm == "control" else step30["pre_gate"]["fused_bpm"]
+            ),
+            "hr_confidence": step30["course_mean_confidence"] if arm == "control" else step30["confidence"],
+            "hr_usable_ratio": (
+                step30["course_usable_ratio"] if arm == "control" else step30["usable_ratio"]
+            ),
+            "gate_hit": False if arm == "control" else step30["gate_hit"],
+            "gate_reason": None if arm == "control" else step30["gate_reason"],
+            "hr_status": "ESTIMATED" if arm == "control" else step30["status"],
+            "restoration_reference_bpm": None if arm == "control" else step30["reference_bpm"],
+            "restoration_consensus_time_bpm": None if arm == "control" else step30["consensus_time_bpm"],
+            "restoration_base_freq_bpm": None if arm == "control" else step30["base_freq_bpm"],
+            "restoration_global_time_bpm": None if arm == "control" else step30["global_time_bpm"],
+            "restoration_n_peaks": step30["selector_n_peaks"] if arm == "control" else step30["n_peaks"],
+            "restoration_segment_json": None if arm == "control" else json.dumps(step30["segment"], ensure_ascii=False, sort_keys=True),
+            "restoration_consensus_json": None if arm == "control" else json.dumps(step30["consensus"], ensure_ascii=False, sort_keys=True),
+            "restoration_course_json": None if arm == "control" else json.dumps(step30["course"], ensure_ascii=False, sort_keys=True),
+            "control_course_json": json.dumps(step30["course_json"], ensure_ascii=False, sort_keys=True) if arm == "control" else None,
             "br_bpm": round(br_bpm, 3) if br_bpm is not None else None,
+            "phase_stability": round(phase_stability, 8) if phase_stability is not None else None,
+            "motion_proxy": round(motion_proxy, 10) if motion_proxy is not None else None,
             "rsp_br_bpm": ref.get("rsp_br_bpm"),
             "ecg_status": ref.get("ecg_status"),
         })
-        previous_by_block[block_id] = step30["selector_next_previous_bpm"]
+        if arm == "control":
+            previous_by_block[block_id] = step30["selector_next_previous_bpm"]
 
     return rows
 
@@ -242,17 +380,22 @@ def summarize(subject: str | None, rows: list[dict]) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output-dir", type=Path, required=True,
+                        help="New, task-specific directory; existing directories are protected.")
+    parser.add_argument("--arm", choices=("control", "restoration"), default="control")
+    args = parser.parse_args()
     algo = load_module(PRODUCER, "producer_pre30s")
     target = load_module(TARGETED, "targeted_pre30s")
     install_target_overrides(target)
 
-    # 6 场次扩样输出写新目录，不覆盖 08-31 旧 3 场次结果目录 mmwave_pre30s_selector_hr_20260831
-    out = Path(r"D:\Project\厚粲杯\11_数据\derived\mmwave_pre30s_selector_hr_20260831_6subjects_expanded")
-    out.mkdir(parents=True, exist_ok=True)
+    # Every clock rerun is isolated from the historical Python-time baseline.
+    out = args.output_dir
+    out.mkdir(parents=True, exist_ok=False)
 
     all_rows: list[dict] = []
     for subject in SUBJECTS:
-        rows = run_subject(algo, target, subject)
+        rows = run_subject(algo, target, subject, args.arm)
         if not rows:
             continue  # not_estimable 场次已在 run_subject 打印原因，不写空 CSV
         summarize(subject, rows)
